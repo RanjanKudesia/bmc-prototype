@@ -1,0 +1,25 @@
+[debug] [2022-10-06T21:50:46.438Z] ----------------------------------------------------------------------
+[debug] [2022-10-06T21:50:46.442Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\RANJAN\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-10-06T21:50:46.443Z] CLI Version:   11.14.0
+[debug] [2022-10-06T21:50:46.443Z] Platform:      win32
+[debug] [2022-10-06T21:50:46.443Z] Node Version:  v16.16.0
+[debug] [2022-10-06T21:50:46.445Z] Time:          Fri Oct 07 2022 03:20:46 GMT+0530 (India Standard Time)
+[debug] [2022-10-06T21:50:46.445Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-06T21:50:46.552Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-06T21:50:46.553Z] > authorizing via signed-in user (ranjan.kudesia@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\RANJAN\OneDrive\Desktop\BMC Prototype\bmc-prototype
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
