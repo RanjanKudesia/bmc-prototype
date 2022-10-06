@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import firebase from './firebase/FirebaseConfig';
+
+// import firebase from './firebase/FirebaseConfig';
 import NavigationBar from './components/NavigationBar';
 import DashBoard from './components/pages/DashBoard';
 import { Routes, Route } from 'react-router-dom';
