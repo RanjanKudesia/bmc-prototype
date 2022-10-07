@@ -44,7 +44,7 @@ export default function DashBoard() {
                         sequence.map(seq => {
                             return (
                                 <>
-                                    <option value={seq}>{seq}</option>
+                                    <option key={seq} value={seq}>{seq}</option>
                                 </>
                             );
                         })
