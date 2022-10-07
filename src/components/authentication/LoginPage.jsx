@@ -39,38 +39,44 @@ const LoginPage = ({ existingUser }) => {
     return (
         <>
             {
-                existingUser ? <div className='row'>
-                    <h3>Welcome, {existingUser.email}</h3>
-                    <button type='button' className='btn-primary' onClick={handleLogout}>Logout</button>
-                </div>
+                existingUser ? <>
+                    <h3 className='alert alert-success'>Welcome, {existingUser.email}</h3>
+                    <button type='button' className='btn btn-warning' onClick={handleLogout}>Logout</button>
+                </>
                     :
                     <form onSubmit={handleSubmit} >
-                        <label className='form-label'>
-                            Username(email):
-                            <input
-                                type={'email'}
-                                value={userName}
-                                onChange={e => setUserName(e.target.value)}
-                                className='form-control'
-                                required
-                            >
+                        <div className='mb-3'>
 
-                            </input>
-                        </label>
-                        <label className='form-label'>
-                            Password:
-                            <input
-                                type={'password'}
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                className='form-control'
-                                required
-                            >
+                            <label className='form-label'>
+                                Username(email):
+                                <input
+                                    type={'email'}
+                                    value={userName}
+                                    onChange={e => setUserName(e.target.value)}
+                                    className='form-control'
+                                    required
+                                >
 
-                            </input>
-                        </label>
-                        <button className='btn-primary'>Login</button>
-                        <button type="button" onClick={handleSendResetPasswordEmail} className='btn btn-primary'>Reset Password</button>
+                                </input>
+                            </label>
+                        </div>
+                        <div className='mb-3'>
+
+                            <label className='form-label'>
+                                Password:
+                                <input
+                                    type={'password'}
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    className='form-control'
+                                    required
+                                >
+
+                                </input>
+                            </label>
+                        </div>
+                        <button className='btn btn-primary'>Login</button>
+                        <button type="button" onClick={handleSendResetPasswordEmail} className='btn btn-primary ms-3'>Reset Password</button>
                     </form>
             }
         </>

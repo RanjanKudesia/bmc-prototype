@@ -20,19 +20,10 @@ function SignupPage({ existingUser }) {
             alert(error.message);
         }
     }
-
-    function handleLogout() {
-        firebaseAuthService.logoutUser();
-    }
-
     return (
         <>
             {
-                existingUser ? <div className='row'>
-                    <h3>Welcome, {existingUser.email}</h3>
-                    <button type='button' className='btn-primary' onClick={handleLogout}>Logout</button>
-                </div>
-                    :
+                ( existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ? 
                     <form onSubmit={handleSubmit}>
                         <div className='mb-3'>
 
@@ -63,7 +54,7 @@ function SignupPage({ existingUser }) {
                             </label>
                         </div>
                         <button className='btn btn-primary'>Submit</button>
-                    </form>
+                    </form>:null
             }
         </>
     )

@@ -1,9 +1,14 @@
 
 
-function Home() {
+function Home({ existingUser }) {
     return (
         <>
-            <h1 className="text-xl ">Home</h1>
+            {
+                existingUser ?
+                    <h1 className="text-xl ">Home</h1>
+                    :
+                    <h1>Please Login to see details</h1>
+            }
         </>
     )
 }
