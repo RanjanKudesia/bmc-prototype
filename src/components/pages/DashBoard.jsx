@@ -35,7 +35,7 @@ const BMCNumber = [
 export default function DashBoard({ existingUser }) {
 
     const [BMCNumberOption, setBMCNumberOption] = useState('');
-    const [connectionNumberOption, setConnectionNumberOption] = useState('');
+    const [connectionNumberOption, setConnectionNumberOption] = useState(null);
 
 
     function handleOnSelectMBCNumber(event) {
@@ -55,7 +55,7 @@ export default function DashBoard({ existingUser }) {
                         {/* This is for selecting BMC number */}
                         <div className='container'>
                             <div className="form-floating mt-3" id="floatingSelect-bmc">
-                                <select className="form-select"  aria-label="Floating label select example" onChange={handleOnSelectMBCNumber} defaultValue={'none'}>
+                                <select className="form-select" aria-label="Floating label select example" onChange={handleOnSelectMBCNumber} defaultValue={'none'}>
                                     <option value="none">Select an Option</option>
                                     {
                                         BMCNumber.map(seq => {
