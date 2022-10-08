@@ -1,5 +1,6 @@
 import { Outlet, Link } from 'react-router-dom';
 import firebaseAuthService from '../../../firebase/FirebaseAuthService';
+import image from '../../data/assets/bmc_logo_old1.png';
 
 function NavigationBar({ existingUser }) {
 
@@ -10,14 +11,13 @@ function NavigationBar({ existingUser }) {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-color">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" href="home">BMC</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+            <nav className=" container navbar navbar-expand-lg navbar-color">
+                <div className="container">
+                        <Link className="navbar-brand" to={'home'}>
+                            <img className='nav-logo' src={image} alt="BMC-logo"/>
+                        </Link>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="nav nav-pills ">
+                        <ul className="nav nav-pills nav-contents">
                             <li className="nav-item">
                                 <Link className="nav-link " to={'home'}>Home</Link>
                             </li>
@@ -36,9 +36,17 @@ function NavigationBar({ existingUser }) {
                             <li class="nav-item l-3">
                                 {
                                     existingUser ?
-                                        <Link onClick={handleLogout} className="nav-link nav-login" to="login"><div className='btn btn-warning'>Logout</div></Link>
+                                        <Link onClick={handleLogout} className="nav-login btn btn-warning" to="login"><div>Logout</div></Link>
                                         :
-                                        <Link className="nav-link nav-login active " to="login">Login</Link>
+                                        <Link className="nav-link nav-login active" to="login">Login</Link>
+                                }
+                            </li>
+                            <li class="nav-item l-3">
+                                {
+                                    existingUser ?
+                                        <Link onClick={handleLogout} className="nav-link active nav-reset-password" to="resetPassword"><div>Reset Password</div></Link>
+                                        :
+                                        <Link className="btn btn-warning nav-reset-password" to="resetPassword">Forgot Password</Link>
                                 }
                             </li>
                         </ul>
@@ -47,7 +55,9 @@ function NavigationBar({ existingUser }) {
             </nav>
             {
                 existingUser ?
-                    <h3 className='alert alert-success'>Welcome, {existingUser.email}</h3>
+                <div className='container alert alert-success '>
+                    <h3 className='welcome-header'>Welcome, {existingUser.email}</h3>
+                </div>
                     :
                     null
             }

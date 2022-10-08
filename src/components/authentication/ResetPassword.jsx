@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import firebaseAuthService from '../../firebase/FirebaseAuthService';
 
-const LoginPage = ({ existingUser }) => {
+function ResetPassword({ existingUser }) {
 
     const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
 
-    async function handleSubmit(event) {
-        event.preventDefault();
+    async function handleSendResetPasswordEmail() {
+        if (!userName) {
+            alert("Missing Username!!!");
+            return;
+        }
         try {
-            await firebaseAuthService.LoginUser(userName, password);
-            setUserName("");
-            setPassword("");
+            await firebaseAuthService.sendPasswordResetEmail(userName);
+            alert("Successfully sent the password reset email to your email account")
         } catch (error) {
             alert(error.message);
         }
     }
 
-    //This is Login form
     return (
         <>
             {
@@ -29,8 +29,8 @@ const LoginPage = ({ existingUser }) => {
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                     <div className="card shadow-2-strong" id='login-card'>
                                         <div className="card-body p-5 text-center">
-                                            <h1 className="mb-5">Login</h1>
-                                            <form onSubmit={handleSubmit}>
+                                            <h1 className="mb-5">Reset Password</h1>
+                                            <form onSubmit={handleSendResetPasswordEmail}>
                                                 <div className="form-outline mb-4">
                                                     <label className="form-label" for="typeEmailX-2">
                                                         <h5>
@@ -43,24 +43,10 @@ const LoginPage = ({ existingUser }) => {
                                                             className="form-control form-control-lg"
                                                             required
                                                         />
+                                                        <label>Reset email will be sent to this email</label>
                                                     </label>
                                                 </div>
-                                                <div className="form-outline mb-4">
-                                                    <label className="form-label" for="typePasswordX-2">
-                                                        <h5>
-                                                            Password
-                                                        </h5>
-                                                        <input
-                                                            type="password"
-                                                            id="typePasswordX-2"
-                                                            className="form-control form-control-lg"
-                                                            value={password}
-                                                            onChange={e => setPassword(e.target.value)}
-                                                            required
-                                                        />
-                                                    </label>
-                                                </div>
-                                                <button className="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                                <button className="btn btn-primary btn-lg btn-block" type="submit">Reset Password</button>
                                             </form>
                                         </div>
                                     </div>
@@ -70,7 +56,7 @@ const LoginPage = ({ existingUser }) => {
                     </section>
             }
         </>
-    );
+    )
 }
 
-export default LoginPage;
+export default ResetPassword;

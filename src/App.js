@@ -7,6 +7,8 @@ import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import SignupPage from './components/authentication/SignupPage';
 import LoginPage from './components/authentication/LoginPage';
+import Error from './components/pages/Error';
+import ResetPassword from './components/authentication/ResetPassword';
 
 const App = () => {
 
@@ -26,7 +28,8 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<SignupPage existingUser={user} />} />
           <Route path="login" element={<LoginPage existingUser={user} />} />
-          <Route path="*" element={<h1>404</h1>} />
+          <Route path="resetPassword" element={<ResetPassword existingUser={user} />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </>

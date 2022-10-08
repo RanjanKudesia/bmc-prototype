@@ -1,7 +1,62 @@
-.nav-login{
-    position: absolute;
-    right: 45px;
-}
-.navbar-color{
+.navbar-color {
     background-color: #e3f2fd;
+}
+
+.nav-logo {
+    position: relative;
+    right: px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.welcome-header {
+    position: relative;
+    left: 350px;
+}
+
+.nav-contents {
+    position: absolute;
+    right: 400px;
+}
+
+.nav-contents .nav-login {
+    position: absolute;
+    right: -350px;
+}
+
+.nav-contents .nav-reset-password {
+    position: relative;
+    right: -250px;
+}
+
+
+#login-section {
+    background-color: #508bfc;
+}
+
+#login-card {
+    border-radius: 2rem;
+}
+
+#floatingSelect-bmc{
+    width: 20rem;
+    position: relative;
+    left: 100px;
+}
+
+#floatingSelect-connection{
+    width: 20rem;
+    position: relative;
+    bottom: 74px;
+    left: 800px;
+}
+#show-graph-button{
+    position: relative;
+    bottom: 70px;
+    left: 550px;
+}
+
+#graph{
+    position: relative;
+    left: 180px;
 }

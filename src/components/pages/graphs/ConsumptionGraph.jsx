@@ -55,11 +55,11 @@ export default function ConsumptionGraph({ connectionNumber }) {
 
     return (
         <LineChart
-            width={800}
-            height={300}
+            width={900}
+            height={400}
             data={selectiveData(connectionNumber)}
             margin={{
-                top: 20,
+                // top: ,
                 right: 50,
                 left: 20,
                 bottom: 5
