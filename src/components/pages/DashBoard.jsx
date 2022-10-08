@@ -35,7 +35,7 @@ const BMCNumber = [
 export default function DashBoard({ existingUser }) {
 
     const [BMCNumberOption, setBMCNumberOption] = useState('');
-    const [connectionNumberOption, setconnectionNumberOption] = useState('');
+    const [connectionNumberOption, setConnectionNumberOption] = useState('');
 
 
     function handleOnSelectMBCNumber(event) {
@@ -43,7 +43,7 @@ export default function DashBoard({ existingUser }) {
     }
 
     function handleOnSelectConnectionNumber(event) {
-        setconnectionNumberOption(event.target.value);
+        setConnectionNumberOption(event.target.value);
     }
 
 

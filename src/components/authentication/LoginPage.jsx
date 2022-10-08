@@ -17,9 +17,9 @@ const LoginPage = ({ existingUser }) => {
         }
     }
 
-    function handleLogout() {
-        firebaseAuthService.logoutUser();
-    }
+    // function handleLogout() {
+    //     firebaseAuthService.logoutUser();
+    // }
 
     async function handleSendResetPasswordEmail() {
         if (!userName) {
@@ -39,10 +39,7 @@ const LoginPage = ({ existingUser }) => {
     return (
         <>
             {
-                existingUser ? <>
-                    <h3 className='alert alert-success'>Welcome, {existingUser.email}</h3>
-                    <button type='button' className='btn btn-warning' onClick={handleLogout}>Logout</button>
-                </>
+                existingUser ? null
                     :
                     <form onSubmit={handleSubmit} >
                         <div className='mb-3'>
