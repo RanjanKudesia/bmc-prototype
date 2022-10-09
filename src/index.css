@@ -1,6 +1,9 @@
-
 .navbar-color {
     background-color: #e3f2fd;
+}
+
+.navbar-background {
+    background-color: cornsilk;
 }
 
 .nav-logo {
@@ -39,25 +42,52 @@
     border-radius: 2rem;
 }
 
-#floatingSelect-bmc{
+#floatingSelect-bmc {
     width: 20rem;
     position: relative;
     left: 100px;
 }
 
-#floatingSelect-connection{
+#floatingSelect-connection {
     width: 20rem;
     position: relative;
     bottom: 74px;
     left: 800px;
 }
-#show-graph-button{
+
+#show-graph-button {
     position: relative;
     bottom: 70px;
     left: 550px;
 }
 
-#graph{
+#show-graph-button:enabled {
+    background-color: green;
+    color: #e3f2fd;
+}
+#show-graph-button:hover {
+    background-color: rgb(247, 166, 16);
+    border-color: rgb(247, 166, 16);
+    color: #e3f2fd;
+}
+
+#graph {
+    background-color: floralwhite;
     position: relative;
-    left: 180px;
+    left: 380px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 35px;
+}
+
+.graph-details-consumption {
+    position: absolute;
+    top: 350px;
+    width: 250px;
+}
+
+.graph-details-amount {
+    position: absolute;
+    top: 600px;
+    width: 250px;
 }
