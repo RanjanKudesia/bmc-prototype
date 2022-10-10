@@ -101,3 +101,8 @@
 .copyright {
     background-color: #e3f2fd;
 }
+
+.home {
+    position: relative;
+    left: 35rem;
+}

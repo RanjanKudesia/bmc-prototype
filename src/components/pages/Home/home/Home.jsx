@@ -7,7 +7,9 @@ function Home({ existingUser }) {
                 existingUser ?
                     <>
                         <div className="container">
-                            <h1 className="alert alert-danger text-xl ">Home</h1>
+                            <h1 className="alert alert-danger text-xl">
+                                <p className="home">Home</p>
+                            </h1>
                         </div>
                     </>
                     :
