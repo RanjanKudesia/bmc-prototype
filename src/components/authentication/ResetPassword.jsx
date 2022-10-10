@@ -43,7 +43,7 @@ function ResetPassword({ existingUser }) {
                                                             className="form-control form-control-lg"
                                                             required
                                                         />
-                                                        <label>Reset email will be sent to this email</label>
+                                                        <label>Reset password(link) will be sent to this email</label>
                                                     </label>
                                                 </div>
                                                 <button className="btn btn-primary btn-lg btn-block" type="submit">Reset Password</button>

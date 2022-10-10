@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 
 function Error() {
     return (
@@ -10,7 +10,7 @@ function Error() {
                     <p class="lead">
                         The page you’re looking for doesn’t exist.
                     </p>
-                    <a href="index.html" class="btn btn-primary">Go Home</a>
+                    <Link to='home' className="btn btn-primary">Go Home</Link>
                 </div>
             </div>
         </>

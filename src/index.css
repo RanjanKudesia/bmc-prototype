@@ -65,6 +65,7 @@
     background-color: green;
     color: #e3f2fd;
 }
+
 #show-graph-button:hover {
     background-color: rgb(247, 166, 16);
     border-color: rgb(247, 166, 16);
@@ -90,4 +91,13 @@
     position: absolute;
     top: 600px;
     width: 250px;
+}
+
+.contact-form {
+    background-color: floralwhite;
+    border-radius: 45px;
+}
+
+.copyright {
+    background-color: #e3f2fd;
 }

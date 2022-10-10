@@ -64,6 +64,9 @@ function NavigationBar({ existingUser }) {
                 }
             </section>
             <Outlet />
+            <div className='container alert alert-secondary mb-0'>
+                <h3 className='welcome-header'> &copy; Copyright {new Date().getUTCFullYear()} Bhopal Municipal Corporation</h3>
+            </div>
         </>
     )
 }

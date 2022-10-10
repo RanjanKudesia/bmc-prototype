@@ -74,11 +74,11 @@ function ConsumptionGraph({ connectionNumber, data }) {
                             <YAxis />
                             <Tooltip />
                             <Legend />
-                            <ReferenceLine x={maximumDate} stroke="blue" label="" />
-                            <ReferenceLine y={average} label="" stroke="green" />
+                            <ReferenceLine x={maximumDate} stroke="green" label="" />
+                            <ReferenceLine y={average} label="" stroke="red" />
                             <Line type="monotone" dataKey="Consumption" stroke="#8884d8" />
-                            <Line type="monotone" dataKey="Maximum" stroke="blue" />
-                            <Line type="monotone" dataKey="Average" stroke="green" />
+                            <Line type="monotone" dataKey="Maximum" stroke="green" />
+                            <Line type="monotone" dataKey="Average" stroke="red" />
                         </LineChart>
                     </>
                     :

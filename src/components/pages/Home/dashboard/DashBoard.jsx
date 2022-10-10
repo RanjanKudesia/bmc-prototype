@@ -85,9 +85,8 @@ export default function DashBoard({ existingUser }) {
         <>
             {
                 existingUser ?
-                    <>
-                        {/* This is for selecting BMC number */}
-                        <div className='container'>
+                        <section className="container vh-100">
+                            {/* This is for selecting BMC number */}
                             <div className="form-floating mt-3" id="floatingSelect-bmc">
                                 <select className="form-select" aria-label="Floating label select example" onChange={handleOnSelectMBCNumber} defaultValue={'none'}>
                                     <option value="none">Select an Option</option>
@@ -128,25 +127,35 @@ export default function DashBoard({ existingUser }) {
                                 </div>
                                 <ul class="list-group graph-details-consumption">
                                     <li className="fs-5 bg-secondary text-white list-group-item">Consumption</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0,7)}</li>
-                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0,7)}</li>
-                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0,7)}</li>
+                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
+                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
                                     {/* <li class="list-group-item">Amount:</li> */}
                                 </ul>
                                 <ul class="list-group graph-details-amount">
                                     <li className="fs-5 bg-secondary text-white list-group-item">Amount</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0,7)}</li>
-                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0,7)}</li>
-                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0,7)}</li>
+                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
+                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
                                     {/* <li class="list-group-item">Amount:</li> */}
                                 </ul>
                             </p>
-                        </div>
-                    </>
+                        
+                    </section>
                     :
-                    <>
-                        <h1>Please login to see details</h1>
-                    </>
+                    <section className="container vh-100" id='login-section'>
+                        <div className="container py-5 h-100">
+                            <div className="row d-flex justify-content-center align-items-center h-100">
+                                <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                                    <div className="alert alert-success shadow-2-strong" id='login-card'>
+                                        <div className="card-body p-5 text-center">
+                                            <h1 className="m-5">Please login to see details</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
             }
         </>
     );
