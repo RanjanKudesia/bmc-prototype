@@ -15,7 +15,7 @@ const logoutUser = () => {
 }
 
 const sendPasswordResetEmail = (email) => {
-    return auth.sendPasswordResetEmail();
+    return auth.sendPasswordResetEmail(email);
 }
 
 

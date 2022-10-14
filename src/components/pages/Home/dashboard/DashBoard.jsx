@@ -128,15 +128,15 @@ export default function DashBoard({ existingUser }) {
                                 <ul class="list-group graph-details-consumption">
                                     <li className="fs-5 bg-secondary text-white list-group-item">Consumption</li>
                                     <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
                                     {/* <li class="list-group-item">Amount:</li> */}
                                 </ul>
-                                <ul class="list-group graph-details-amount">
+                                <ul className="list-group graph-details-amount">
                                     <li className="fs-5 bg-secondary text-white list-group-item">Amount</li>
                                     <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li class="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li class="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
                                     {/* <li class="list-group-item">Amount:</li> */}
                                 </ul>
                             </p>

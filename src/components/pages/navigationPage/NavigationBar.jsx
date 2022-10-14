@@ -23,18 +23,18 @@ function NavigationBar({ existingUser }) {
                                     <Link className="nav-link " to={'home'}>Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link class="nav-link" to="dashBoard">Dashboard</Link>
+                                    <Link className="nav-link" to="dashBoard">Dashboard</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="contact">Contact</Link>
                                 </li>
                                 {
                                     (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
-                                        <li class="nav-item">
+                                        <li className="nav-item">
                                             <Link className="nav-link" to="signup">Add people</Link>
                                         </li> : null
                                 }
-                                <li class="nav-item l-3">
+                                <li className="nav-item l-3">
                                     {
                                         existingUser ?
                                             <Link onClick={handleLogout} className="nav-login btn btn-warning" to="login"><div>Logout</div></Link>
@@ -42,7 +42,7 @@ function NavigationBar({ existingUser }) {
                                             <Link className="nav-link nav-login active" to="login">Login</Link>
                                     }
                                 </li>
-                                <li class="nav-item l-3">
+                                <li className="nav-item l-3">
                                     {
                                         existingUser ?
                                             <Link onClick={handleLogout} className="nav-link active nav-reset-password" to="resetPassword"><div>Reset Password</div></Link>

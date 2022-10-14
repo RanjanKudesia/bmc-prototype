@@ -6,11 +6,11 @@ function Home({ existingUser }) {
             {
                 existingUser ?
                     <>
-                        <div className="container">
+                        <section className="container">
                             <h1 className="alert alert-danger text-xl">
                                 <p className="home">Home</p>
                             </h1>
-                        </div>
+                        </section>
                     </>
                     :
                     <section className="container vh-100" id='login-section'>

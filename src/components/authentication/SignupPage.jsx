@@ -35,7 +35,7 @@ function SignupPage({ existingUser }) {
                                             <h1 className="mb-5">Add User</h1>
                                             <form onSubmit={handleSubmit}>
                                                 <div className="form-outline mb-4">
-                                                    <label className="form-label" for="typeEmailX-2">
+                                                    <label className="form-label" htmlFor="typeEmailX-2">
                                                         <h5>
                                                             Username(email):
                                                         </h5>
@@ -49,7 +49,7 @@ function SignupPage({ existingUser }) {
                                                     </label>
                                                 </div>
                                                 <div className="form-outline mb-4">
-                                                    <label className="form-label" for="typePasswordX-2">
+                                                    <label className="form-label" htmlFor="typePasswordX-2">
                                                         <h5>
                                                             Password
                                                         </h5>
