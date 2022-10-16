@@ -4,7 +4,7 @@ import NavigationBar from './components/pages/navigationPage/NavigationBar';
 import DashBoard from './components/pages/Home/dashboard/DashBoard';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home/home/Home';
-import Contact from './components/pages/Home/contactpPage/Contact';
+import Contact from './components/pages/Home/contactPage/Contact';
 import SignupPage from './components/authentication/SignupPage';
 import LoginPage from './components/authentication/LoginPage';
 import Error from './components/pages/Error/Error';

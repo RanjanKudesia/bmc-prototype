@@ -23,16 +23,6 @@
     right: 400px;
 }
 
-.nav-contents .nav-login {
-    position: absolute;
-    right: -350px;
-}
-
-.nav-contents .nav-reset-password {
-    position: relative;
-    right: -250px;
-}
-
 
 #login-section {
     background-color: #508bfc;

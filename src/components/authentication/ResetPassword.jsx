@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import firebaseAuthService from '../../firebase/FirebaseAuthService';
 
-function ResetPassword({ existingUser }) {
+function ResetPassword() {
 
     const [userName, setUserName] = useState("");
 
@@ -41,7 +41,7 @@ function ResetPassword({ existingUser }) {
                                                     className="form-control form-control-lg"
                                                     required
                                                 />
-                                                <label>Reset password(link) will be sent to this email</label>
+                                                <label>Reset (link) will be sent to this email</label>
                                             </label>
                                         </div>
                                         <button onClick={handleSendResetPasswordEmail} className="btn btn-primary btn-lg btn-block" type="button">Reset Password</button>
