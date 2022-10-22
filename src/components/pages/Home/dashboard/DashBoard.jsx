@@ -37,7 +37,9 @@ export default function DashBoard({ existingUser }) {
 
     const [BMCNumberOption, setBMCNumberOption] = useState('');
     const [connectionNumberOption, setConnectionNumberOption] = useState(null);
-
+    const [show, setShow] = useState('Consumption');
+    const [width, setWidth] = useState(900);
+    const [height, setHeight] = useState(400);
 
     function handleOnSelectMBCNumber(event) {
         setBMCNumberOption(event.target.value);
@@ -85,7 +87,9 @@ export default function DashBoard({ existingUser }) {
         <>
             {
                 existingUser ?
-                        <section className="container vh-100">
+                    <section className="container" id='login-section'>
+                        <div className="container py-5 h-100">
+
                             {/* This is for selecting BMC number */}
                             <div className="form-floating mt-3" id="floatingSelect-bmc">
                                 <select className="form-select" aria-label="Floating label select example" onChange={handleOnSelectMBCNumber} defaultValue={'none'}>
@@ -118,32 +122,61 @@ export default function DashBoard({ existingUser }) {
                                 </select>
                                 <label htmlFor="floatingSelect">Connection-Number</label>
                             </div>
-                            <button id='show-graph-button' className="btn btn-outline-success " type="button" data-bs-toggle="collapse" data-bs-target="#graph" aria-expanded="false" aria-controls="collapseWidthExample">
-                                Show Graph
-                            </button>
-                            <p>
-                                <div id='graph' className='collapse collapse-horizontal'>
-                                    <ConsumptionGraph data={data} connectionNumber={connectionNumberOption} />
+                            <div class="d-flex justify-content-center align-items-center flex-row ">
+                                <button onClick={(e) => setShow('Consumption')} id='show-graph-button' className="p-2 btn btn-outline-success my-3 " type="button" >
+                                    Show Consumption Graph
+                                </button>
+
+                                <button onClick={(e) => setShow('Amount')} id='show-graph-button' className="p-2 btn my-3 " type="button" >
+                                    Show Amount Graph
+                                </button>
+                            </div>
+                            <div className='container-fluid'>
+                                <div class="d-flex flex-row mb-3">
+                                    <div class=" p-2 d-flex flex-column mt-3">
+                                        {/* This is for consumption */}
+                                        <ul class="p-2 list-group graph-details">
+                                            <li className="fs-5 bg-secondary text-white list-group-item">Consumption</li>
+                                            <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                        </ul>
+                                        {/* This is for amount */}
+                                        <ul className="p-2 list-group graph-details">
+                                            <li className="fs-5 bg-secondary text-white list-group-item">Amount</li>
+                                            <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                        </ul>
+                                        {/* This is for other details */}
+                                        <ul className="p-2 list-group graph-details">
+                                            <li className="fs-5 bg-secondary text-white list-group-item">Other Details</li>
+                                            <li className="list-group-item">Power Factor: {average.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Sanctioned Load: {maximum.toString().slice(0, 7)}</li>
+                                            <li className="list-group-item">Current Reading: {minimum.toString().slice(0, 7)}</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className='p-2 d-flex justify-content-end align-items-center'>
+                                        <div id='graph' className='card'>
+                                            <div className='card-body'>
+                                                <ConsumptionGraph
+                                                    width={width}
+                                                    height={height}
+                                                    data={data}
+                                                    show={show}
+                                                    connectionNumber={connectionNumberOption}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="list-group graph-details-consumption">
-                                    <li className="fs-5 bg-secondary text-white list-group-item">Consumption</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
-                                    {/* <li class="list-group-item">Amount:</li> */}
-                                </ul>
-                                <ul className="list-group graph-details-amount">
-                                    <li className="fs-5 bg-secondary text-white list-group-item">Amount</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
-                                    {/* <li class="list-group-item">Amount:</li> */}
-                                </ul>
-                            </p>
-                        
+                            </div>
+
+                        </div>
                     </section>
                     :
-                    <section className="container vh-100" id='login-section'>
+                    <section className="container" id='login-section'>
                         <div className="container py-5 h-100">
                             <div className="row d-flex justify-content-center align-items-center h-100">
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
