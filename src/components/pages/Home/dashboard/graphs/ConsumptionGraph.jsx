@@ -39,8 +39,6 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
         }
 
         area = data[0].Address;
-        average = sum / data.length;
-
     }
 
     if (connectionNumber) {
@@ -81,7 +79,9 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
             <div className='container pt-3 pb-4 '>
                 <MDBContainer>
                     <div className=" fs-3 ms-2 alert alert-dark mt-2 d-flex justify-content-center align-items-center flex-row">Connection number :&nbsp;{connectionNumber ? connectionNumber : <>Not selected </>},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address : {area ? area : <>Bhopal</>}</div>
-                    <Line data={state.dataLine} options={{ responsive: true }} />
+                    <div className="displayGraph">
+                        <Line data={state.dataLine} options={{ responsive: true }} />
+                    </div>
                 </MDBContainer>
             </div>
         </>

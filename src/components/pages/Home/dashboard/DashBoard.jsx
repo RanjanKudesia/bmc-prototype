@@ -138,28 +138,30 @@ export default function DashBoard({ existingUser }) {
 
 
                             <div className=" p-2 d-flex flex-column mt-3">
+                                {/* <div class="d-flex justify-content-evenly mt-3"> */}
                                 {/* This is for consumption */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item">Consumption</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Consumption</h1></li>
+                                    <li className="list-group-item"><h3>Average: {average.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Maximum: {maximum.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Minimum: {minimum.toString().slice(0, 7)}</h3></li>
                                 </ul>
                                 {/* This is for amount */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item">Amount</li>
-                                    <li className="list-group-item">Average: {average.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Maximum: {maximum.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Minimum: {minimum.toString().slice(0, 7)}</li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Amount</h1></li>
+                                    <li className="list-group-item"><h3>Average: {average.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Maximum: {maximum.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Minimum: {minimum.toString().slice(0, 7)}</h3></li>
                                 </ul>
                                 {/* This is for other details */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item">Other Details</li>
-                                    <li className="list-group-item">Power Factor: {average.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Sanctioned Load: {maximum.toString().slice(0, 7)}</li>
-                                    <li className="list-group-item">Current Reading: {minimum.toString().slice(0, 7)}</li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Other Details</h1></li>
+                                    <li className="list-group-item"><h3>Power Factor: {average.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Sanctioned Load: {maximum.toString().slice(0, 7)}</h3></li>
+                                    <li className="list-group-item"><h3>Current Reading: {minimum.toString().slice(0, 7)}</h3></li>
                                 </ul>
                             </div>
+                            {/* </div> */}
 
 
 

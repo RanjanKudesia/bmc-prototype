@@ -22,7 +22,8 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" exact element={<NavigationBar existingUser={user} />}>
+        <Route exact element={<NavigationBar existingUser={user} />}>
+          <Route path='/' element={<Home existingUser={user} />} />
           <Route path='home' element={<Home existingUser={user} />} />
           <Route path="dashBoard" element={<DashBoard existingUser={user} />} />
           <Route path="contact" element={<Contact />} />

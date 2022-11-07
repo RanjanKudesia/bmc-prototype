@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import firebaseAuthService from '../../firebase/FirebaseAuthService';
+import Home from './../pages/Home/home/Home';
 
 const LoginPage = ({ existingUser }) => {
 
@@ -21,7 +22,7 @@ const LoginPage = ({ existingUser }) => {
     return (
         <>
             {
-                existingUser ? null
+                existingUser ? <Home existingUser={existingUser} />
                     :
                     <section className="container" id='login-section'>
                         <div className="container py-5 h-100">

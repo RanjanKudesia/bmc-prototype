@@ -16,7 +16,7 @@
 
 .nav-contents li :hover {
     color: aliceblue;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #1388e0;
 }
 
@@ -62,12 +62,17 @@
 .graph {
     background-color: rgb(241, 229, 205);
     border-radius: 45px;
-    
+
+}
+
+.displayGraph {
+    background-color: #e9e6e3;
+    border-radius: 25px;
 }
 
 .graph-details {
     border-radius: 45px;
-    width: 250px;
+    /* width: 250px; */
 }
 
 .contact-form {

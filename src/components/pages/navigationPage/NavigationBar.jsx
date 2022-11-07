@@ -34,7 +34,7 @@ function NavigationBar({ existingUser }) {
                                 {
                                     (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="signup">Add people</Link>
+                                            <Link className="nav-link" to="signup">Add Users</Link>
                                         </li> : null
                                 }
                                 
