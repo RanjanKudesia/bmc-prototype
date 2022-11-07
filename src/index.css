@@ -59,11 +59,10 @@
     color: #e3f2fd;
 }
 
-#graph {
-    background-color: floralwhite;
+.graph {
+    background-color: rgb(241, 229, 205);
     border-radius: 45px;
-    padding: 10px;
-    width: fit-content;
+    
 }
 
 .graph-details {
