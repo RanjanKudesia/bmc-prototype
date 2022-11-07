@@ -52,7 +52,7 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
                 {
                     label: show,
                     fill: true,
-                    lineTension: 0.3,
+                    lineTension: 0,
                     backgroundColor: "rgba(225, 204,230, .3)",
                     borderColor: "rgb(205, 130, 158)",
                     borderCapStyle: "butt",

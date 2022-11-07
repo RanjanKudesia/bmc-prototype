@@ -23,7 +23,7 @@ const App = () => {
     <>
       <Routes>
         <Route exact element={<NavigationBar existingUser={user} />}>
-          <Route path='/' element={<Home existingUser={user} />} />
+          <Route path='/' element={user?<Home existingUser={user} />:<LoginPage existingUser={user} />} />
           <Route path='home' element={<Home existingUser={user} />} />
           <Route path="dashBoard" element={<DashBoard existingUser={user} />} />
           <Route path="contact" element={<Contact />} />

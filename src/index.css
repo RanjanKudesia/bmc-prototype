@@ -1,9 +1,10 @@
 .navbar-color {
+    /* background-color: #e3f2fd; */
     background-color: #e3f2fd;
 }
 
 .navbar-background {
-    background-color: cornsilk;
+    /* background-color: cornsilk; */
 }
 
 .nav-logo {
@@ -21,7 +22,8 @@
 }
 
 #login-section {
-    background-color: #508bfc;
+    /* background-color: #508bfc; */
+    background-color: cornsilk;
     min-height: 800px;
 }
 
@@ -68,6 +70,7 @@
 .displayGraph {
     background-color: #e9e6e3;
     border-radius: 25px;
+    /* max-width: 300px; */
 }
 
 .graph-details {
