@@ -1,6 +1,7 @@
 .navbar-color {
     /* background-color: #e3f2fd; */
-    background-color: #e3f2fd;
+    background-color: rgb(104, 100, 100);
+    /* background-color: #fd5f00; */
 }
 
 .navbar-background {
@@ -14,22 +15,56 @@
     border-radius: 8px;
 }
 
+.nav-contents li .nav-link {
+    color: #e3f2fd;
+}
 
 .nav-contents li :hover {
     color: aliceblue;
-    border-radius: 10px;
-    background-color: #1388e0;
+    /* border-radius: 10px; */
+    background-color: #fd5f00;
+}
+
+.resetPassword {
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #fd5f00;
+}
+
+.forgotPassword {
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #fd5f00;
+}
+
+.logout {
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #fd5f00;
+}
+
+.login {
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #fd5f00;
 }
 
 #login-section {
     /* background-color: #508bfc; */
-    background-color: cornsilk;
+    background-color: rgb(245, 217, 206);
+    /* background-color: rgb(26, 23, 13); */
     min-height: 800px;
 }
 
 #login-card {
     border-radius: 2rem;
     margin-top: 60px;
+    background-color: rgb(104, 100, 100);
+    ;
 }
 
 #floatingSelect-bmc {
@@ -50,8 +85,10 @@
     /* position: relative;
     bottom: 70px;
     left: 550px; */
-    background-color: rgb(70, 233, 111);
-    color: #110501;
+    /* background-color: rgb(70, 233, 111); */
+    background-color: #fd5f00;
+    border-color: #fd5f00;
+    color: #ffffff;
 
 }
 
@@ -62,13 +99,13 @@
 }
 
 .graph {
-    background-color: rgb(241, 229, 205);
+    background-color: rgb(104, 100, 100);
+    /* background-color: #fd5f00; */
     border-radius: 45px;
-
 }
 
 .displayGraph {
-    background-color: #e9e6e3;
+    background-color: white;
     border-radius: 25px;
     /* max-width: 300px; */
 }
@@ -78,11 +115,27 @@
     /* width: 250px; */
 }
 
+.contact-form::before {
+    background-color: #fd5f00;
+}
+
 .contact-form {
-    background-color: floralwhite;
+    background-color: rgb(104, 100, 100);
     border-radius: 45px;
 }
 
+#contact-form-button {
+    background-color: #fd5f00;
+    color: white;
+}
+
+.contact-text {
+    color: white;
+}
+
 .copyright {
-    background-color: #e3f2fd;
+    background-color: rgb(104, 100, 100);
+    color: white;
+    height: 60px;
+
 }

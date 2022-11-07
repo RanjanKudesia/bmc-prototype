@@ -32,11 +32,11 @@ function SignupPage({ existingUser }) {
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                     <div className="card shadow-2-strong" id='login-card'>
                                         <div className="card-body p-5 text-center">
-                                            <h1 className="mb-5">Add User</h1>
+                                            <h1 className="mb-5 contact-text">Add User</h1>
                                             <form onSubmit={handleSubmit}>
                                                 <div className="form-outline mb-4">
                                                     <label className="form-label" htmlFor="typeEmailX-2">
-                                                        <h5>
+                                                        <h5 className='contact-text'>
                                                             Username(email):
                                                         </h5>
                                                         <input type="email"
@@ -50,7 +50,7 @@ function SignupPage({ existingUser }) {
                                                 </div>
                                                 <div className="form-outline mb-4">
                                                     <label className="form-label" htmlFor="typePasswordX-2">
-                                                        <h5>
+                                                        <h5 className='contact-text'>
                                                             Password
                                                         </h5>
                                                         <input
@@ -63,7 +63,7 @@ function SignupPage({ existingUser }) {
                                                         />
                                                     </label>
                                                 </div>
-                                                <button className="btn btn-primary btn-lg btn-block" type="submit">Add</button>
+                                                <button id='contact-form-button' className="btn btn-lg btn-block" type="submit">Add</button>
                                             </form>
                                         </div>
                                     </div>
