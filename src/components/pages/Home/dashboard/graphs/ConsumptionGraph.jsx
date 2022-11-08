@@ -52,7 +52,7 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
                 {
                     label: show,
                     fill: true,
-                    lineTension: 0.3,
+                    lineTension: 0,
                     backgroundColor: "rgba(225, 204,230, .3)",
                     borderColor: "rgb(205, 130, 158)",
                     borderCapStyle: "butt",
@@ -62,8 +62,8 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
                     pointBorderColor: "green",
                     pointBackgroundColor: "rgb(255, 255, 255)",
                     pointBorderWidth: 10,
-                    pointHoverRadius: 20,
-                    pointHoverBackgroundColor: "yellow",
+                    pointHoverRadius: 10,
+                    pointHoverBackgroundColor: "floralwhite",
                     pointHoverBorderColor: "rgba(220, 220, 220,1)",
                     pointHoverBorderWidth: 2,
                     pointRadius: 2,
@@ -78,7 +78,8 @@ const ChartsPage = ({ connectionNumber, data, show, }) => {
         <>
             <div className='container pt-3 pb-4 '>
                 <MDBContainer>
-                    <div className=" fs-3 ms-2 alert alert-dark mt-2 d-flex justify-content-center align-items-center flex-row">Connection number :&nbsp;{connectionNumber ? connectionNumber : <>Not selected </>},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address : {area ? area : <>Bhopal</>}</div>
+                    <div className=" fs-4 mt-2 mb-3 d-flex justify-content-left align-items-center flex-row contact-text">Connection number :&nbsp;{connectionNumber ? connectionNumber : <>Not selected </>},</div>
+                    <div className=" fs-4 mt-2 mb-3 d-flex justify-content-left align-items-center flex-row contact-text">Address : {area ? area : <>Bhopal</>}</div>
                     <div className="displayGraph">
                         <Line data={state.dataLine} options={{ responsive: true }} />
                     </div>

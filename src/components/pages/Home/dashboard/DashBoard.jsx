@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ConsumptionGraph from './graphs/ConsumptionGraph';
 import data from '../data/dummy data.json';
+import { Link } from 'react-router-dom';
 
 const connectionNumberSequence = [
     'N55468',
@@ -36,7 +37,7 @@ let average, maximum = 0, maximumDate, minimum = 10000;
 export default function DashBoard({ existingUser }) {
 
     const [BMCNumberOption, setBMCNumberOption] = useState('');
-    const [connectionNumberOption, setConnectionNumberOption] = useState(null);
+    const [connectionNumberOption, setConnectionNumberOption] = useState('N55468');
     const [show, setShow] = useState('Consumption');
 
     function selectiveData(connectionNumberOption) {
@@ -97,8 +98,8 @@ export default function DashBoard({ existingUser }) {
                             </div>
                             {/* This is for selecting Connection number */}
                             <div className="form-floating mt-3" id="floatingSelect-connection">
-                                <select className="form-select" aria-label="Floating label select example" onChange={(event) => { setConnectionNumberOption(event.target.value) }} defaultValue={'none'}>
-                                    <option value="none">Select an Option</option>
+                                <select className="form-select" aria-label="Floating label select example" onChange={(event) => { setConnectionNumberOption(event.target.value) }} defaultValue={'N55468'}>
+                                    <option value="N55468">N55468</option>
                                     {
                                         connectionNumberSequence.map(seq => {
                                             return (
@@ -110,8 +111,15 @@ export default function DashBoard({ existingUser }) {
                                     }
                                 </select>
                                 <label htmlFor="floatingSelect">Connection-Number</label>
-                            </div>
-                            <div className="d-flex justify-content-center align-items-center flex-row ">
+                                {/* This is for selecting Connection number */}
+                                <div className="form-floating mt-3" id="floatingSelect-connection">
+                                    <select className="form-select" aria-label="Floating label select example" onChange={(e) => setShow(e.target.value)} defaultValue={'Consumption'}>
+                                        <option value={'Consumption'}>Show Consumption Graph</option>
+                                        <option value={'Amount'}>Show Amount Graph</option>
+                                    </select>
+                                    <label htmlFor="floatingSelect">Connection-Number</label>
+                                </div>
+                                {/* <div className="d-flex justify-content-center align-items-center flex-row ">
                                 <button onClick={() => setShow('Consumption')} id='show-graph-button' className="p-2 btn btn-outline-success my-3 " type="button" >
                                     Show Consumption Graph
                                 </button>
@@ -119,15 +127,15 @@ export default function DashBoard({ existingUser }) {
                                 <button onClick={() => setShow('Amount')} id='show-graph-button' className="p-2 btn my-3 " type="button" >
                                     Show Amount Graph
                                 </button>
+                            </div> */}
+
                             </div>
 
 
 
 
 
-
-
-                            <div className='graph'>
+                            <div className='graph mt-4'>
                                 <ConsumptionGraph
                                     data={selectiveData(connectionNumberOption)}
                                     show={show}
@@ -137,28 +145,28 @@ export default function DashBoard({ existingUser }) {
 
 
 
-                            <div className=" p-2 d-flex flex-column mt-3">
+                            <div className=" p-2 d-flex flex-column mt-3 justify-content-center align-items-center">
                                 {/* <div class="d-flex justify-content-evenly mt-3"> */}
                                 {/* This is for consumption */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Consumption</h1></li>
-                                    <li className="list-group-item"><h3>Average: {average.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Maximum: {maximum.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Minimum: {minimum.toString().slice(0, 7)}</h3></li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Consumption</h3></li>
+                                    <li className="list-group-item"><h4>Average: {average.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Maximum: {maximum.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Minimum: {minimum.toString().slice(0, 7)}</h4></li>
                                 </ul>
                                 {/* This is for amount */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Amount</h1></li>
-                                    <li className="list-group-item"><h3>Average: {average.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Maximum: {maximum.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Minimum: {minimum.toString().slice(0, 7)}</h3></li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Amount</h3></li>
+                                    <li className="list-group-item"><h4>Average: {average.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Maximum: {maximum.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Minimum: {minimum.toString().slice(0, 7)}</h4></li>
                                 </ul>
                                 {/* This is for other details */}
                                 <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h1>Other Details</h1></li>
-                                    <li className="list-group-item"><h3>Power Factor: {average.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Sanctioned Load: {maximum.toString().slice(0, 7)}</h3></li>
-                                    <li className="list-group-item"><h3>Current Reading: {minimum.toString().slice(0, 7)}</h3></li>
+                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Other Details</h3></li>
+                                    <li className="list-group-item"><h4>Power Factor: {average.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Sanctioned Load: {maximum.toString().slice(0, 7)}</h4></li>
+                                    <li className="list-group-item"><h4>Current Reading: {minimum.toString().slice(0, 7)}</h4></li>
                                 </ul>
                             </div>
                             {/* </div> */}
@@ -178,7 +186,7 @@ export default function DashBoard({ existingUser }) {
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                     <div className="alert alert-success shadow-2-strong" id='login-card'>
                                         <div className="card-body p-5 text-center">
-                                            <h1 className="m-5">Please login to see details</h1>
+                                            <h1 className="m-5 contact-text">Please <Link to={'login'}><a > login </a></Link> to see details</h1>
                                         </div>
                                     </div>
                                 </div>
