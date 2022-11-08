@@ -10,7 +10,7 @@ function Contact() {
                         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                             <div className="card shadow-2-strong" id='login-card'>
                                 <div className="contact-form card-body p-5 text-center">
-                                    <h2 className="mb-2 contact-text">Contact Us</h2>
+                                    <h2 className="mb-2" style={{color:'#fd5f00'}}>Contact Us</h2>
                                     <p className="fs-4 contact-text"> Please send your message below. We will get back to you at the earliest! </p>
                                     <form >
                                         <div className="row">

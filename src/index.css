@@ -27,28 +27,28 @@
 
 .resetPassword {
     color: white;
-    padding: 6px;
+    padding: 8px;
     border-radius: 4px;
     background-color: #fd5f00;
 }
 
 .forgotPassword {
     color: white;
-    padding: 6px;
+    padding: 8px;
     border-radius: 4px;
     background-color: #fd5f00;
 }
 
 .logout {
     color: white;
-    padding: 6px;
+    padding: 8px;
     border-radius: 4px;
     background-color: #fd5f00;
 }
 
 .login {
     color: white;
-    padding: 6px;
+    padding: 8px;
     border-radius: 4px;
     background-color: #fd5f00;
 }
@@ -106,13 +106,14 @@
 
 .displayGraph {
     background-color: white;
+    /* background-color:  rgb(245, 217, 206); */
     border-radius: 25px;
     /* max-width: 300px; */
 }
 
 .graph-details {
     border-radius: 45px;
-    /* width: 250px; */
+    width: 350px;
 }
 
 .contact-form::before {

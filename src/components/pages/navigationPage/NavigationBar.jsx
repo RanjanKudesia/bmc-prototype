@@ -25,11 +25,14 @@ function NavigationBar({ existingUser }) {
                                 <li className="nav-item">
                                     <Link className="nav-link " to={'home'}>Home</Link>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link className="nav-link" to="dashBoard">Dashboard</Link>
+                                </li> */}
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="analysisPage">Analysis</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="contact">Contact</Link>
+                                    <Link className="nav-link" to="commercial">Commercial</Link>
                                 </li>
                                 {
                                     (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
@@ -37,27 +40,30 @@ function NavigationBar({ existingUser }) {
                                             <Link className="nav-link" to="signup">Add Users</Link>
                                         </li> : null
                                 }
-                                
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="contact">Contact</Link>
+                                </li>
+
                             </ul>
                             <form class="d-flex">
                                 <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                                     <li className='nav-item mx-2 my-1'>
-                                    {
-                                        existingUser ?
-                                        <Link className="btn" to="resetPassword"><div className=' resetPassword'>Reset Password</div></Link>
-                                        :
-                                        <Link className="btn " to="resetPassword"><div className='forgotPassword'>Forgot Password</div></Link>
-                                    }
+                                        {
+                                            existingUser ?
+                                                <Link className="btn" to="resetPassword"><div className=' resetPassword'>Reset Password</div></Link>
+                                                :
+                                                <Link className="btn " to="resetPassword"><div className='forgotPassword'>Forgot Password</div></Link>
+                                        }
                                     </li>
                                     <li className='nav-item mx-2 my-1'>
-                                    {
-                                        existingUser ?
-                                        <Link onClick={handleLogout} className="btn " to="login"><div className='logout'>Logout</div></Link>
-                                        :
-                                        <Link className="btn" to="login"><div className='login'>Login</div></Link>
-                                    }
+                                        {
+                                            existingUser ?
+                                                <Link onClick={handleLogout} className="btn " to="login"><div className='logout'>Logout</div></Link>
+                                                :
+                                                <Link className="btn" to="login"><div className='login'>Login</div></Link>
+                                        }
                                     </li>
-                                    </ul>
+                                </ul>
                             </form>
                         </div>
                     </div>
