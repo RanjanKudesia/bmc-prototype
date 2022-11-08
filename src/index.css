@@ -133,6 +133,11 @@
     color: white;
 }
 
+.contact-text a {
+    color: #fd5f00;
+    text-decoration: none;
+}
+
 .copyright {
     background-color: rgb(104, 100, 100);
     color: white;

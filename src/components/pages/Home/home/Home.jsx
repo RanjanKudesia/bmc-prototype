@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 
 function Home({ existingUser }) {
     return (
@@ -19,7 +19,7 @@ function Home({ existingUser }) {
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                     <div className="alert alert-success shadow-2-strong " id='login-card'>
                                         <div className="card-body p-5 text-center">
-                                            <h1 className="m-5">Please login to see details</h1>
+                                            <h1 className="m-5 contact-text">Please <Link to={'login'}><a > login </a></Link> to see details</h1>
                                         </div>
                                     </div>
                                 </div>
