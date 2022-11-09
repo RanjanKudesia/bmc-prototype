@@ -11,6 +11,7 @@ import Error from './components/pages/Error/Error';
 import ResetPassword from './components/authentication/ResetPassword';
 import AnalysisPage from './components/pages/Home/Analysis/Analysis';
 import Commercial from './components/pages/Home/Commercial/Commercial';
+import About from './components/pages/Home/About/About';
 
 const App = () => {
 
@@ -29,7 +30,7 @@ const App = () => {
           <Route path='home' element={<Home existingUser={user} />} />
           <Route path='analysisPage' element={<AnalysisPage existingUser={user} />} />
           <Route path='commercial' element={<Commercial existingUser={user} />} />
-          {/* <Route path="dashBoard" element={<DashBoard existingUser={user} />} /> */}
+          <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<SignupPage existingUser={user} />} />
           <Route path="login" element={<LoginPage existingUser={user} />} />
