@@ -134,9 +134,23 @@
     color: white;
 }
 
-.contact-text a {
+.contact-text-link {
     color: #fd5f00;
     text-decoration: none;
+}
+
+.contact-text-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.vl {
+    border-left: 4px solid #fd5f00;
+    height: 40px;
+}
+
+#analysis-table{
+    width: 40rem;
 }
 
 .copyright {

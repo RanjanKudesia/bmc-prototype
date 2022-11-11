@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import firebaseAuthService from './firebase/FirebaseAuthService';
 import NavigationBar from './components/pages/navigationPage/NavigationBar';
-import DashBoard from './components/pages/Home/dashboard/DashBoard';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home/home/Home';
 import Contact from './components/pages/Home/contactPage/Contact';
@@ -12,6 +11,7 @@ import ResetPassword from './components/authentication/ResetPassword';
 import AnalysisPage from './components/pages/Home/Analysis/Analysis';
 import Commercial from './components/pages/Home/Commercial/Commercial';
 import About from './components/pages/Home/About/About';
+
 
 const App = () => {
 

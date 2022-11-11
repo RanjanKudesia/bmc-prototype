@@ -70,7 +70,7 @@ function NavigationBar({ existingUser }) {
                                 </ul>
                             </form>
                         </div>
-                        <a className='navbar-brand ms-3' href='https://www.latentenergy.in/' rel="noreferrer" target='_blank'><img className='nav-logo' src={LatentLogo} alt="BMC-logo" /></a>
+                        <img className='nav-logo' src={LatentLogo} alt="BMC-logo" />
                     </div>
                 </nav>
             </section>
