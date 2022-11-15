@@ -30,10 +30,14 @@ function NavigationBar({ existingUser }) {
                                     <Link className="nav-link" to="dashBoard">Dashboard</Link>
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="analysisPage">Analysis</Link>
+                                    <Link className="nav-link" to="analysisPage">
+                                        Analysis
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="commercial">Commercial</Link>
+                                    <Link className="nav-link" to="commercial">
+                                        Commercial
+                                    </Link>
                                 </li>
                                 {
                                     (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
@@ -42,10 +46,14 @@ function NavigationBar({ existingUser }) {
                                         </li> : null
                                 }
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="contact">Contact</Link>
+                                    <Link className="nav-link" to="contact">
+                                        Contact
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="about">About</Link>
+                                    <Link className="nav-link" to="about">
+                                        About
+                                    </Link>
                                 </li>
 
                             </ul>
@@ -62,9 +70,17 @@ function NavigationBar({ existingUser }) {
                                     <li className='nav-item my-1'>
                                         {
                                             existingUser ?
-                                                <Link onClick={handleLogout} className="btn " to="login"><div className='logout'>Logout</div></Link>
+                                                <Link onClick={handleLogout} className="btn " to="login">
+                                                    <div className='logout'>
+                                                        Logout
+                                                    </div>
+                                                </Link>
                                                 :
-                                                <Link className="btn" to="login"><div className='login'>Login</div></Link>
+                                                <Link className="btn" to="login">
+                                                    <div className='login'>
+                                                        Login
+                                                    </div>
+                                                </Link>
                                         }
                                     </li>
                                 </ul>
@@ -75,8 +91,10 @@ function NavigationBar({ existingUser }) {
                 </nav>
             </section>
             <Outlet />
-            <footer className='d-flex justify-content-center container  mb-0 copyright'>
-                <h5 className='mt-3'> Made and created by Latent Renewable Energies Private Limited for Bhopal Municipal Corporation</h5>
+            <footer className='d-flex justify-content-center container mb-0 copyright'>
+                <h5 className='d-flex mt-3 flex-wrap'>
+                    Made and created by Latent Renewable Energies Pvt Ltd for Bhopal Municipal Corporation
+                </h5>
             </footer>
         </>
     )

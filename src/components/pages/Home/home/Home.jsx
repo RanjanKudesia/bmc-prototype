@@ -34,19 +34,19 @@ function Home({ existingUser }) {
                                 {/* //*:DATA */}
                                 <div className="d-flex flex-row justify-content-center">
 
-                                    <div className='col-md-4 p-2 ms-1'>
+                                    <div className='col-md-4 p-2 '>
                                         <h3><span className=" badge bg-secondary">Total Connections: 2600</span></h3>
                                         <h3><span className=" badge bg-secondary">Total Load: 2323KW</span></h3>
                                         <h3><span className=" badge bg-secondary">Total Energy: 4500KW</span></h3>
                                     </div>
-                                    <div className='p-2 col-md-4 offset-md-4 ms-1'>
+                                    <div className='p-2 col-md-4 offset-md-4'>
                                         <div className='mb-2'><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='analysis'>Analysis</Link></button></div>
                                         <div className='mt-2'><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='commercial'>Commercial</Link></button></div>
                                     </div>
 
                                 </div>
 
-                                <div className="d-flex flex-column mt-5 px-5 mx-5 justify-content-center mb-3">
+                                <div className="d-flex flex-column mt-5 justify-content-center align-content-center mb-3 flex-wrap">
                                     <DetailsHome />
                                 </div>
                             </div>
