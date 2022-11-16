@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function DetailsHome() {
+function CommercialDetails() {
 
     const [one, setOne] = useState(2);
     const [two, setTwo] = useState(2);
@@ -23,7 +23,7 @@ function DetailsHome() {
                     <tbody>
 
                         <tr>
-                            <td>HT Number of Connections with Energy Variations +5:</td>
+                            <td>Gross HT bill:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,11 +43,18 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
+                            <td>1000Rs</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gross Total HT bill for the Year:</td>
+                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td><div className="vl"></div></td>
                             <td>1000</td>
                         </tr>
 
                         <tr>
-                            <td>HT Number of Connections with Energy Variations -5:</td>
+                            <td>Gross LT bill:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,11 +74,28 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>1000</td>
+                            <td>1056</td>
                         </tr>
 
                         <tr>
-                            <td>HT Number of Connections with zero energy Consumption:</td>
+                            {/* <th scope="row">3</th> */}
+                            <td>Gross LT Bill of the Year:</td>
+                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td><div className="vl"></div></td>
+                            <td>2000</td>
+                        </tr>
+
+                        <tr>
+                            {/* <th scope="row">3</th> */}
+                            <td>Gross bill HT+LT:</td>
+                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td><div className="vl"></div></td>
+                            <td>2000</td>
+                        </tr>
+
+                        <tr>
+                            {/* <th scope="row">3</th> */}
+                            <td>Connections with zero bill:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,12 +115,12 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>1056</td>
+                            <td>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>LT Number of Connections with Energy Variations of +5%:</td>
+                            <td>Due date of payment:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -121,7 +145,7 @@ function DetailsHome() {
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>LT Number of Connections with Energy Variations of -5%:</td>
+                            <td>Surcharge payable on delay:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -146,7 +170,7 @@ function DetailsHome() {
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>LT Number of Connections with zero energy Consumption:</td>
+                            <td>Bill payment to minimize surcharge:</td>
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -176,4 +200,4 @@ function DetailsHome() {
     )
 }
 
-export default DetailsHome;
+export default CommercialDetails;

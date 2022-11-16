@@ -94,7 +94,7 @@ export default function DashBoard({ existingUser }) {
                                         })
                                     }
                                 </select>
-                                <label htmlFor="floatingSelect">BMC Number</label>
+                                <label htmlFor="floatingSelect">Area</label>
                             </div>
                             {/* This is for selecting Connection number */}
                             <div className="form-floating mt-3" id="floatingSelect-connection">
@@ -119,16 +119,6 @@ export default function DashBoard({ existingUser }) {
                                     </select>
                                     <label htmlFor="floatingSelect">Connection-Number</label>
                                 </div>
-                                {/* <div className="d-flex justify-content-center align-items-center flex-row ">
-                                <button onClick={() => setShow('Consumption')} id='show-graph-button' className="p-2 btn btn-outline-success my-3 " type="button" >
-                                    Show Consumption Graph
-                                </button>
-
-                                <button onClick={() => setShow('Amount')} id='show-graph-button' className="p-2 btn my-3 " type="button" >
-                                    Show Amount Graph
-                                </button>
-                            </div> */}
-
                             </div>
 
 
@@ -144,40 +134,62 @@ export default function DashBoard({ existingUser }) {
                             </div>
 
 
-
-                            <div className=" p-2 d-flex flex-column mt-3 justify-content-center align-items-center">
-                                {/* <div class="d-flex justify-content-evenly mt-3"> */}
-                                {/* This is for consumption */}
-                                <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Consumption</h3></li>
-                                    <li className="list-group-item"><h4>Average: {average.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Maximum: {maximum.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Minimum: {minimum.toString().slice(0, 7)}</h4></li>
-                                </ul>
-                                {/* This is for amount */}
-                                <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Amount</h3></li>
-                                    <li className="list-group-item"><h4>Average: {average.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Maximum: {maximum.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Minimum: {minimum.toString().slice(0, 7)}</h4></li>
-                                </ul>
-                                {/* This is for other details */}
-                                <ul className="p-2 list-group graph-details">
-                                    <li className="fs-5 bg-secondary text-white list-group-item d-flex justify-content-center align-items-center"><h3>Other Details</h3></li>
-                                    <li className="list-group-item"><h4>Power Factor: {average.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Sanctioned Load: {maximum.toString().slice(0, 7)}</h4></li>
-                                    <li className="list-group-item"><h4>Current Reading: {minimum.toString().slice(0, 7)}</h4></li>
-                                </ul>
+                            <div className='d-flex justify-content-center'>
+                            <table id='analysis-table' className=" table table-responsive table-hover border border-secondary table-striped mt-4">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" className='bg-secondary text-white'>Details</th>
+                                        <th scope="col" className='bg-secondary text-white'>Consumption</th>
+                                        <th scope="col" className='bg-secondary text-white'>Amount</th>
+                                        {/* <th scope="col">Other Details</th> */}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Average</th>
+                                        <td>{average.toString().slice(0, 7)}</td>
+                                        <td>1205</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Maximum</th>
+                                        <td>{maximum.toString().slice(0, 7)}</td>
+                                        <td>5000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Minimum</th>
+                                        <td>{minimum.toString().slice(0, 7)}</td>
+                                        <td>1200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
-                            {/* </div> */}
 
-
-
+                            <div className='d-flex justify-content-center'>
+                            <table id='analysis-table' className=" table table-responsive table-hover border border-secondary table-striped mt-4">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" className='bg-secondary text-white'>Other Details</th>
+                                        <th scope="col" className='bg-secondary text-white'>Values</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Power Factor</th>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sanctioned Load</th>
+                                        <td>{maximum.toString().slice(0, 7)}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Current Reading</th>
+                                        <td>{minimum.toString().slice(0, 7)}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
 
                         </div>
-
-
-
                     </section>
                     :
                     <section className="container" id='login-section'>
