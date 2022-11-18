@@ -11,8 +11,8 @@ function CommercialDetails() {
 
     return (
         <>
-            <div className="container">
-                <table className="table table-secondary table-striped border border-secondary">
+            <div className="container d-flex justify-content-center">
+                <table id='analysis-table' className="table table-secondary table-striped border border-secondary">
                     {/* <thead>
                         <tr>
                             <th scope="col"></th>
@@ -23,8 +23,8 @@ function CommercialDetails() {
                     <tbody>
 
                         <tr>
-                            <td>Gross HT bill:</td>
-                            <td>
+                            <td className='fs-4'>Gross HT bill:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {one}%
@@ -43,19 +43,19 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>1000Rs</td>
+                            <td className='fs-4'>1000Rs</td>
                         </tr>
 
                         <tr>
-                            <td>Gross Total HT bill for the Year:</td>
-                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'>Gross Total HT bill for the Year:</td>
+                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
-                            <td>1000</td>
+                            <td className='fs-4'>1000</td>
                         </tr>
 
                         <tr>
-                            <td>Gross LT bill:</td>
-                            <td>
+                            <td className='fs-4'>Gross LT bill:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {two}%
@@ -74,29 +74,29 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>1056</td>
+                            <td className='fs-4'>1056</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Gross LT Bill of the Year:</td>
-                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'>Gross LT Bill of the Year:</td>
+                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Gross bill HT+LT:</td>
-                            <td><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'>Gross bill HT+LT:</td>
+                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Connections with zero bill:</td>
-                            <td>
+                            <td className='fs-4'>Connections with zero bill:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {three}%
@@ -115,13 +115,13 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Due date of payment:</td>
-                            <td>
+                            <td className='fs-4'>Due date of payment:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {four}%
@@ -140,13 +140,13 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Surcharge payable on delay:</td>
-                            <td>
+                            <td className='fs-4'>Surcharge payable on delay:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {five}%
@@ -165,13 +165,13 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">3</th> */}
-                            <td>Bill payment to minimize surcharge:</td>
-                            <td>
+                            <td className='fs-4'>Bill payment to minimize surcharge:</td>
+                            <td className='fs-4'>
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {six}%
@@ -190,7 +190,7 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td>2000</td>
+                            <td className='fs-4'>2000</td>
                         </tr>
 
                     </tbody>

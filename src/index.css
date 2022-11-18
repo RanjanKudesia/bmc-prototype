@@ -21,7 +21,11 @@
 
 .nav-contents li :hover {
     color: aliceblue;
-    /* border-radius: 10px; */
+    background-color: #fd5f00;
+}
+
+.Active{
+    color: aliceblue;
     background-color: #fd5f00;
 }
 
@@ -150,7 +154,7 @@
 }
 
 #analysis-table{
-    width: 40rem;
+    width: 57rem;
 }
 
 .copyright {

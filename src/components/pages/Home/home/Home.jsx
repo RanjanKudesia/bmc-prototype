@@ -22,7 +22,7 @@ function Home({ existingUser }) {
 
                                 {/* //*: Optimization of Power Bill */}
                                 <div class="d-flex justify-content-center">
-                                    <h2><span className=" p-3 mb-4">OPTIMIZATION OF POWER BILL</span></h2>
+                                    <h2><span className=" p-3 mb-4">POWER BILL OPTIMIZATION</span></h2>
                                 </div>
 
                                 {/* //*: For Month and Year */}
@@ -34,15 +34,64 @@ function Home({ existingUser }) {
                                 {/* //*:DATA */}
                                 <div className="d-flex flex-row justify-content-center">
 
-                                    <div className='col-md-4 p-2 '>
-                                        <h3><span className=" badge bg-secondary">Total Connections: 2600</span></h3>
-                                        <h3><span className=" badge bg-secondary">Total Load: 2323KW</span></h3>
-                                        <h3><span className=" badge bg-secondary">Total Energy: 4500KW</span></h3>
+                                    <table style={{ width: '20rem' }} className="p-2 table table-bordered bg-secondary">
+
+                                        <tbody>
+                                            <tr>
+
+                                                <td className='bg-secondary'><h3><span className=" badge bg-secondary">Total Connections: 2600</span></h3></td>
+
+
+                                            </tr>
+                                            <tr>
+
+                                                <td><h3><span className=" badge bg-secondary">Total Load: 2323KW</span></h3></td>
+
+
+                                            </tr>
+                                            <tr>
+
+                                                <td><h3><span className=" badge bg-secondary">Total Energy: 4500KW</span></h3></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <div className='d-flex ms-4'>
+                                        <table className="table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='analysis'>Analysis</Link></button></th>
+                                                    <th scope="col"></th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    {/* <th>1</th> */}
+                                                    <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='commercial'>Commercial</Link></button></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    {/* <th scope="row">2</th> */}
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                {/* <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr> */}
+                                            </tbody>
+                                        </table>
+                                        {/* <div className='p-2 col'><button className="btn btn-secondary "><Link className='text-white fw-bold fs-5' to='analysis'>Analysis</Link></button></div>
+                                        <div className='p-2 col'><button className="btn btn-secondary "><Link className='text-white fw-bold fs-5' to='commercial'>Commercial</Link></button></div> */}
                                     </div>
-                                    <div className='p-2 col-md-4 offset-md-4'>
-                                        <div className='mb-2'><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='analysis'>Analysis</Link></button></div>
-                                        <div className='mt-2'><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='commercial'>Commercial</Link></button></div>
-                                    </div>
+
 
                                 </div>
 

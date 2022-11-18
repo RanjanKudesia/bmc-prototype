@@ -14,9 +14,9 @@ function DetailsAnalysis({ type }) {
                 <table className="table table-secondary table-striped border border-secondary">
 
                     <thead>
-                        <tr>
+                        <tr className='fs-4'>
                             <th scope="col">{type}</th>
-                            <th scope="col">Variation%</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -25,8 +25,8 @@ function DetailsAnalysis({ type }) {
                     <tbody>
 
                         <tr>
-                            <td>Number of Connections with Energy Variations +5:</td>
-                            <td><div className="dropdown">
+                            <td className='fs-4'>Number of Connections with Energy Variations +5:</td>
+                            <td className='fs-4'><div className="dropdown">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {one}%
                                 </button>
@@ -43,12 +43,12 @@ function DetailsAnalysis({ type }) {
                                 </ul>
                             </div></td>
                             <td><div className="vl"></div></td>
-                            <td>1000</td>
+                            <td className='fs-4'>1000</td>
                         </tr>
 
                         <tr>
-                            <td>Number of Connections with Energy Variations -5:</td>
-                            <td><div className="dropdown">
+                            <td className='fs-4'>Number of Connections with Energy Variations -5:</td>
+                            <td className='fs-4'><div className="dropdown">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {two}%
                                 </button>
@@ -65,13 +65,13 @@ function DetailsAnalysis({ type }) {
                                 </ul>
                             </div></td>
                             <td><div className="vl"></div></td>
-                            <td>1000</td>
+                            <td className='fs-4'>1000</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">2</th> */}
-                            <td>Number of Connections with zero energy Consumption:</td>
-                            <td><div className="dropdown">
+                            <td className='fs-4'>Number of Connections with zero energy Consumption:</td>
+                            <td className='fs-4'><div className="dropdown">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {three}%
                                 </button>
@@ -88,13 +88,13 @@ function DetailsAnalysis({ type }) {
                                 </ul>
                             </div></td>
                             <td><div className="vl"></div></td>
-                            <td>1056</td>
+                            <td className='fs-4'>1056</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">2</th> */}
-                            <td>Number of Connections with MD{'>'}CD by +5%:</td>
-                            <td><div className="dropdown">
+                            <td className='fs-4'>Number of Connections with MD{'>'}CD by +5%:</td>
+                            <td className='fs-4'><div className="dropdown">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {four}%
                                 </button>
@@ -111,13 +111,13 @@ function DetailsAnalysis({ type }) {
                                 </ul>
                             </div></td>
                             <td><div className="vl"></div></td>
-                            <td>1056</td>
+                            <td className='fs-4'>1056</td>
                         </tr>
 
                         <tr>
                             {/* <th scope="row">2</th> */}
-                            <td>Number of Connections with MD{'>'}CD by -5%:</td>
-                            <td><div className="dropdown">
+                            <td className='fs-4'>Number of Connections with MD{'>'}CD by -5%:</td>
+                            <td className='fs-4'><div className="dropdown">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {five}%
                                 </button>
@@ -134,7 +134,7 @@ function DetailsAnalysis({ type }) {
                                 </ul>
                             </div></td>
                             <td><div className="vl"></div></td>
-                            <td>1056</td>
+                            <td className='fs-4'>1056</td>
                         </tr>
 
                     </tbody>
