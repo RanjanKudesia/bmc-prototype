@@ -24,7 +24,7 @@ const ChartsPage = ({ type }) => {
 
 
     return (
-        <MDBContainer>
+        <MDBContainer className="chart-size">
             {/* <MDBContainer className="mb-5 pb-5 w-50"> */}
             <h3 className="mt-5">{type} chart</h3>
             <Doughnut data={state.dataDoughnut} options={{ responsive: true }} />

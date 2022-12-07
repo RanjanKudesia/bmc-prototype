@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import BeforeLogin from './../../BeforeLogin/BeforeLogin';
 import DetailsHome from './DetailsHome/DetailsHome';
 import { Link } from 'react-router-dom';
 
-function Home({ existingUser }) {
 
+function Home({ data, existingUser }) {
+    
+        var {first,second} = data;
+    
+    // const [thisMonthData, setThisMonthData] = useState(data.first);
+    // const [previousMonthData, setPreviousMonthData] = useState(data.second);
+    console.log(data)
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const d = new Date();
     const date = (' ' + d.getDate()) + ' ' + month[d.getMonth()] + ' ' + d.getFullYear();
+
 
     return (
         <>
@@ -22,7 +30,7 @@ function Home({ existingUser }) {
 
                                 {/* //*: Optimization of Power Bill */}
                                 <div class="d-flex justify-content-center">
-                                    <h2><span className=" p-3 mb-4">POWER BILL OPTIMIZATION</span></h2>
+                                    <h2><span className=" mb-4">POWER BILL OPTIMIZATION</span></h2>
                                 </div>
 
                                 {/* //*: For Month and Year */}
@@ -34,69 +42,35 @@ function Home({ existingUser }) {
                                 {/* //*:DATA */}
                                 <div className="d-flex flex-row justify-content-center">
 
-                                    <table style={{ width: '20rem' }} className="p-2 table table-bordered bg-secondary">
+                                    <table style={{ width: '15rem' }} className=" table table-responsive table-borderless">
 
                                         <tbody>
                                             <tr>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Connections: 2600</span></h4></td>
+                                                <th scope="col"><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/analysisPage'>Analysis</Link></button></th>
+                                            </tr>
+                                            <tr>
 
-                                                <td className='bg-secondary'><h3><span className=" badge bg-secondary">Total Connections: 2600</span></h3></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Load: 2323KW</span></h4></td>
+                                                <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/commercial'>Commercial</Link></button></td>
 
 
                                             </tr>
                                             <tr>
 
-                                                <td><h3><span className=" badge bg-secondary">Total Load: 2323KW</span></h3></td>
-
-
-                                            </tr>
-                                            <tr>
-
-                                                <td><h3><span className=" badge bg-secondary">Total Energy: 4500KW</span></h3></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Energy: 4500KW</span></h4></td>
 
                                             </tr>
                                         </tbody>
                                     </table>
 
 
-                                    <div className='d-flex ms-4'>
-                                        <table className="table table-borderless">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col"><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='analysis'>Analysis</Link></button></th>
-                                                    <th scope="col"></th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    {/* <th>1</th> */}
-                                                    <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='commercial'>Commercial</Link></button></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    {/* <th scope="row">2</th> */}
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                {/* <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry the Bird</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr> */}
-                                            </tbody>
-                                        </table>
-                                        {/* <div className='p-2 col'><button className="btn btn-secondary "><Link className='text-white fw-bold fs-5' to='analysis'>Analysis</Link></button></div>
-                                        <div className='p-2 col'><button className="btn btn-secondary "><Link className='text-white fw-bold fs-5' to='commercial'>Commercial</Link></button></div> */}
-                                    </div>
 
 
                                 </div>
 
                                 <div className="d-flex flex-column mt-5 justify-content-center align-content-center mb-3 flex-wrap">
-                                    <DetailsHome />
+                                    <DetailsHome thisMonthData={first} previousMonthData={second} />
                                 </div>
                             </div>
                         </section>

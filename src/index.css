@@ -157,6 +157,10 @@
     width: 57rem;
 }
 
+.chart-size{
+    min-width: 22rem;
+}
+
 .copyright {
     background-color: rgb(104, 100, 100);
     color: white;

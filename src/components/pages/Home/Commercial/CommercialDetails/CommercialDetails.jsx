@@ -26,7 +26,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Gross HT bill:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {one}%
                                     </button>
                                     <ul className="dropdown-menu">
@@ -43,12 +43,12 @@ function CommercialDetails() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1000Rs</td>
+                            <td className='fs-4'>1000</td>
                         </tr>
 
                         <tr>
                             <td className='fs-4'>Gross Total HT bill for the Year:</td>
-                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'><span className='btn btn-secondary pe-4'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>1000</td>
                         </tr>
@@ -57,7 +57,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Gross LT bill:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {two}%
                                     </button>
                                     <ul className="dropdown-menu">
@@ -80,7 +80,7 @@ function CommercialDetails() {
                         <tr>
                             {/* <th scope="row">3</th> */}
                             <td className='fs-4'>Gross LT Bill of the Year:</td>
-                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'><span className='btn btn-secondary pe-4'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>2000</td>
                         </tr>
@@ -88,7 +88,7 @@ function CommercialDetails() {
                         <tr>
                             {/* <th scope="row">3</th> */}
                             <td className='fs-4'>Gross bill HT+LT:</td>
-                            <td className='fs-4'><span className='btn btn-secondary'>&#x2192;</span></td>
+                            <td className='fs-4'><span className='btn btn-secondary pe-4'>&#x2192;</span></td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>2000</td>
                         </tr>
@@ -98,7 +98,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Connections with zero bill:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {three}%
                                     </button>
                                     <ul className="dropdown-menu">
@@ -123,7 +123,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Due date of payment:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {four}%
                                     </button>
                                     <ul className="dropdown-menu">
@@ -148,7 +148,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Surcharge payable on delay:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {five}%
                                     </button>
                                     <ul className="dropdown-menu">
@@ -173,7 +173,7 @@ function CommercialDetails() {
                             <td className='fs-4'>Bill payment to minimize surcharge:</td>
                             <td className='fs-4'>
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn btn-secondary dropdown-toggle pe-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {six}%
                                     </button>
                                     <ul className="dropdown-menu">

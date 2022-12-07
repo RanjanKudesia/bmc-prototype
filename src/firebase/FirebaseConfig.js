@@ -1,7 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+// import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
+import { getFirestore } from "firebase/firestore";
 
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -15,7 +16,11 @@ const config = {
 
 if(!firebase.apps.length)
 {
-    firebase.initializeApp(config);
+    var app = firebase.initializeApp(config);
 }
 
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
 export default firebase;
+export {db};

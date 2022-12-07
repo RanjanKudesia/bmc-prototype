@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function DetailsHome() {
+function DetailsHome({ thisMonthData, previousMonthData }) {
 
     const [one, setOne] = useState(2);
     const [two, setTwo] = useState(2);
@@ -8,6 +8,61 @@ function DetailsHome() {
     const [four, setFour] = useState(2);
     const [five, setFive] = useState(2);
     const [six, setSix] = useState(2);
+    const [showPlus5,setShowPlus5] = useState(Number);
+    const [showMinus5,setShowMinus5] = useState(Number);
+    const [showZero,setShowZero] = useState(Number);
+
+    function sortLT() {
+
+        const p = new Promise((resolve, reject) => {
+            let plus5 = 0, minus5 = 0, zero = 0;
+            for (let i = 0; i < previousMonthData.length; i++) {
+                const thisMonthAccountData = thisMonthData.find((x) => {
+                    return x.accountId === previousMonthData[i].accountId;
+                })
+                const previousMonthAccountData = previousMonthData[i];
+                if (!thisMonthAccountData) {
+                    continue;
+                } else {
+                    if (parseInt(thisMonthAccountData.totalConsumption) === 0) {
+                        zero++;
+                    }
+                    if ((parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption))) {
+                        const result = ((parseFloat(thisMonthAccountData.totalConsumption) - parseFloat(previousMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
+                        if ((result) >= 5) {
+                            plus5++;
+                        }
+                    } else {
+                        const result = ((parseFloat(previousMonthAccountData.totalConsumption) > parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
+                        if ((result) >= 5) {
+                            minus5++;
+                        }
+                    }
+                }
+            }
+
+            if (plus5) {
+                resolve({ plus5, minus5, zero });
+            } else {
+                reject(new Error('There is no variation'))
+            }
+
+        })
+
+        p.then((response) => {
+            setShowPlus5(response.plus5);
+            setShowMinus5(response.minus5);
+            setShowZero(response.zero);
+            console.log('plus5:',response.plus5);
+            console.log('minus5',response.minus5);
+            console.log('zero:',response.zero);
+        }).catch(error => {
+            console.error('Error:', error.message);
+        })
+
+
+    }
+    sortLT();
 
     return (
         <>
@@ -115,7 +170,7 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>2000</td>
+                            <td className='fs-4'>{showPlus5}</td>
                         </tr>
 
                         <tr>
@@ -140,7 +195,7 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>2000</td>
+                            <td className='fs-4'>{showMinus5}</td>
                         </tr>
 
                         <tr>
@@ -165,7 +220,7 @@ function DetailsHome() {
                                 </div>
                             </td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>2000</td>
+                            <td className='fs-4'>{showZero}</td>
                         </tr>
 
                     </tbody>
