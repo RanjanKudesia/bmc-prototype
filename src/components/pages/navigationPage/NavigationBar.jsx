@@ -3,7 +3,7 @@ import firebaseAuthService from '../../../firebase/FirebaseAuthService';
 import BMCLogo from '../../assets/bmc_logo_old1.png';
 import LatentLogo from '../../assets/logo.png';
 import { useLocation } from 'react-router-dom'
-import AnalysisPage from './../Home/Analysis/Analysis';
+
 
 function NavigationBar({ existingUser }) {
 
@@ -34,10 +34,10 @@ function NavigationBar({ existingUser }) {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-contents">
                                 <li className="nav-item">
                                     {
-                                        (location === 'home') ?
-                                            <Link className="nav-link Active" to={'home'}>Home</Link>
+                                        (location === '') ?
+                                            <Link className="nav-link Active" to={'/'}>Home</Link>
                                             :
-                                            <Link className="nav-link" to={'home'}>Home</Link>
+                                            <Link className="nav-link" to={'/'}>Home</Link>
                                     }
                                 </li>
                                 {/* <li className="nav-item">
@@ -69,22 +69,16 @@ function NavigationBar({ existingUser }) {
                                         </li> : null
                                 }
                                 <li className="nav-item">
-                                    {(location === 'contact') ?
-                                        <Link className="nav-link Active" to="contact">Contact</Link>
-                                        : <Link className="nav-link" to="contact">Contact</Link>
+                                    {(location === 'monthlyDetails') ?
+                                        <Link className="nav-link Active" to="monthlyDetails">Monthly-Details</Link>
+                                        :
+                                        <Link className="nav-link" to="monthlyDetails">Monthly-Details</Link>
                                     }
                                 </li>
 
-                                {/*<li className="nav-item">
-                                    {(location === 'about') ?
-                                        <Link className="nav-link" to="about">About</Link>
-                                        :
-                                        <Link className="nav-link" to="about">About</Link>
-                                    }
-                                </li>*/}
 
                             </ul>
-                            <form class="d-flex">
+                            <form className="d-flex">
                                 <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                                     <li className='nav-item my-1'>
                                         {

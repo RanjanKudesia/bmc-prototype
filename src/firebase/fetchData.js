@@ -4,16 +4,9 @@ import { db } from './FirebaseConfig';
 async function sortSequenceData() {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const currentYear = new Date().getFullYear();
-    let currentMonth = new Date().getMonth()-1;
-    
-    // const latest_month_year = months[currentMonth] + '-' + currentYear.toString();
-    // const test = await getSixMonthsData(latest_month_year);
-    // if(!test)
-    // {
-    //     currentMonth--;
-    // }
-    
-    
+    let currentMonth = new Date().getMonth() - 1;
+
+
     let startYear = currentYear;
     let previousYearStartMonth = 12;
     let thisYearStartMonth = currentMonth - 5;
@@ -40,7 +33,7 @@ async function sortSequenceData() {
 
 async function getSixMonthsData() {
     try {
-        let data={};
+        let data = {};
         const dataSequence = await sortSequenceData();
         let firstMonthData = await getSpecificMonthData(dataSequence[0]);
         let secondMonthData = await getSpecificMonthData(dataSequence[1]);
@@ -93,4 +86,106 @@ async function getSpecificMonthData(month_year) {
     }
 }
 
-export { getSixMonthsData, getSpecificMonthData };
+async function sortedData() {
+    try {
+        const data = await getSixMonthsData();
+        const { first, second, third, fourth, fifth } = data;
+
+        const totalConnections = first.length;
+        let totalLoad = 0,
+            totalEnergy = 0,
+            totalBill = 0,
+            plus5MDSL = 0,
+            minus5MDSL = 0,
+            totalPowerFactorLessThan8 = 0,
+            surchargePayableOnDelay = 0,
+            plus5List = [],
+            minus5List = [],
+            plus5MDSLList = [],
+            minus5MDSLList = [],
+            zeroLTList = [],
+            totalPowerFactorLessThan8List = []
+            ;
+
+        for (let i = 0; i < totalConnections; i++) {
+            totalLoad += parseInt(first[i].maxDemand);
+            totalEnergy += parseInt(first[i].totalConsumption);
+            totalBill += parseInt(first[i].totalAmountAfterDueDate);
+            if (parseInt(first[i].powerFactor) < 0.8) {
+                totalPowerFactorLessThan8++;
+                totalPowerFactorLessThan8List.push(first[i]);
+            }
+            surchargePayableOnDelay += parseInt(first[i].latePayCharge);
+
+
+            let currentMaxDemand = parseInt(first[i].maxDemand);
+            let currentSanctionedLoad = parseInt(first[i].sanctionLoad.slice(0, -2));
+            if ((((currentMaxDemand - currentSanctionedLoad) / currentSanctionedLoad * 100) > 5)) {
+                plus5MDSL++;
+                plus5MDSLList.push(first[i]);
+            } else if ((((currentSanctionedLoad - currentMaxDemand) / currentSanctionedLoad * 100) > 5)) {
+                minus5MDSL++;
+                minus5MDSLList.push(first[i]);
+            }
+
+        }
+
+
+        let plus5 = 0,
+            minus5 = 0,
+            zeroLT = 0;
+
+
+        for (let i = 0; i < second.length; i++) {
+            const thisMonthAccountData = first.find((x) => {
+                return x.accountId === second[i].accountId;
+            })
+            const previousMonthAccountData = second[i];
+            if (!thisMonthAccountData) {
+                continue;
+            } else {
+                if (parseInt(thisMonthAccountData.totalConsumption) === 0) {
+                    zeroLT++;
+                    zeroLTList.push(first[i]);
+                }
+                if ((parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption))) {
+                    const result = ((parseFloat(thisMonthAccountData.totalConsumption) - parseFloat(previousMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
+                    if ((result) >= 5) {
+                        plus5++;
+                        plus5List.push(first[i]);
+                    }
+                } else {
+                    const result = ((parseFloat(previousMonthAccountData.totalConsumption) > parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
+                    if ((result) >= 5) {
+                        minus5++;
+                        minus5List.push(first[i]);
+                    }
+                }
+            }
+        }
+        return {
+            totalEnergy,
+            totalLoad,
+            totalConnections,
+            plus5,
+            minus5,
+            zeroLT,
+            totalBill,
+            plus5MDSL,
+            minus5MDSL,
+            totalPowerFactorLessThan8,
+            surchargePayableOnDelay,
+            plus5List,
+            minus5List,
+            plus5MDSLList,
+            minus5MDSLList,
+            zeroLTList,
+            totalPowerFactorLessThan8List,
+        }
+    } catch (error) {
+        console.error('Error', error.message);
+    }
+}
+
+
+export { sortedData };

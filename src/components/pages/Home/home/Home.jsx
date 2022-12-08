@@ -1,20 +1,14 @@
-import { useState } from 'react';
 import BeforeLogin from './../../BeforeLogin/BeforeLogin';
 import DetailsHome from './DetailsHome/DetailsHome';
 import { Link } from 'react-router-dom';
 
 
 function Home({ data, existingUser }) {
-    
-        var {first,second} = data;
-    
-    // const [thisMonthData, setThisMonthData] = useState(data.first);
-    // const [previousMonthData, setPreviousMonthData] = useState(data.second);
-    console.log(data)
+
+    const { totalConnections, totalEnergy, totalLoad } = data;
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const d = new Date();
     const date = (' ' + d.getDate()) + ' ' + month[d.getMonth()] + ' ' + d.getFullYear();
-
 
     return (
         <>
@@ -42,35 +36,48 @@ function Home({ data, existingUser }) {
                                 {/* //*:DATA */}
                                 <div className="d-flex flex-row justify-content-center">
 
-                                    <table style={{ width: '15rem' }} className=" table table-responsive table-borderless">
+                                    <table style={{ width: '15rem' }} className=" table table-responsive table-bordered">
 
                                         <tbody>
                                             <tr>
-                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Connections: 2600</span></h4></td>
-                                                <th scope="col"><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/analysisPage'>Analysis</Link></button></th>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Connections:</span></h4></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalConnections}</span></h4></td>
+                                                {/* <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/analysisPage'>Analysis</Link></button></td> */}
                                             </tr>
                                             <tr>
 
-                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Load: 2323KW</span></h4></td>
-                                                <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/commercial'>Commercial</Link></button></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Load:</span></h4></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalLoad} kW</span></h4></td>
+                                                {/* <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/commercial'>Commercial</Link></button></td> */}
 
 
                                             </tr>
                                             <tr>
 
-                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Energy: 4500KW</span></h4></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Energy:</span></h4></td>
+                                                <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalEnergy} kW h</span></h4></td>
 
                                             </tr>
                                         </tbody>
                                     </table>
 
+                                </div>
+                                <div className="d-flex flex-row justify-content-center align-content-center">
 
+                                    <table style={{ width: '15rem' }} className=" table table-responsive table-borderless">
 
+                                        <tbody>
+                                            <tr>
+                                                <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/commercial'>Commercial</Link></button></td>
+                                                <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/analysisPage'>Analysis</Link></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
 
                                 <div className="d-flex flex-column mt-5 justify-content-center align-content-center mb-3 flex-wrap">
-                                    <DetailsHome thisMonthData={first} previousMonthData={second} />
+                                    <DetailsHome data={data} />
                                 </div>
                             </div>
                         </section>

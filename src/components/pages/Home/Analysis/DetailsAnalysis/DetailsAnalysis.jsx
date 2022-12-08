@@ -1,12 +1,7 @@
-import { useState } from 'react'
 
-function DetailsAnalysis({ type }) {
+function DetailsAnalysis({ data, type }) {
 
-    const [one, setOne] = useState(2);
-    const [two, setTwo] = useState(2);
-    const [three, setThree] = useState(2);
-    const [four, setFour] = useState(2);
-    const [five, setFive] = useState(2);
+    const { plus5, minus5, zeroLT, plus5MDSL, minus5MDSL } = data;
 
     return (
         <>
@@ -18,7 +13,6 @@ function DetailsAnalysis({ type }) {
                             <th scope="col">{type}</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
 
@@ -26,115 +20,32 @@ function DetailsAnalysis({ type }) {
 
                         <tr>
                             <td className='fs-4'>Number of Connections with Energy Variations +5:</td>
-                            <td className='fs-4'><div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {one}%
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li onClick={() => { setOne(1) }} className='dropdown-item'>1</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setOne(2) }} className='dropdown-item'>2</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setOne(3) }} className='dropdown-item'>3</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setOne(4) }} className='dropdown-item'>4</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setOne(5) }} className='dropdown-item'>5</li>
-                                </ul>
-                            </div></td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1000</td>
+                            <td className='fs-4'>{plus5}</td>
                         </tr>
 
                         <tr>
                             <td className='fs-4'>Number of Connections with Energy Variations -5:</td>
-                            <td className='fs-4'><div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {two}%
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li onClick={() => { setTwo(1) }} className='dropdown-item'>1</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setTwo(2) }} className='dropdown-item'>2</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setTwo(3) }} className='dropdown-item'>3</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setTwo(4) }} className='dropdown-item'>4</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setTwo(5) }} className='dropdown-item'>5</li>
-                                </ul>
-                            </div></td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1000</td>
+                            <td className='fs-4'>{minus5}</td>
                         </tr>
 
                         <tr>
-                            {/* <th scope="row">2</th> */}
                             <td className='fs-4'>Number of Connections with zero energy Consumption:</td>
-                            <td className='fs-4'><div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {three}%
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li onClick={() => { setThree(1) }} className='dropdown-item'>1</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setThree(2) }} className='dropdown-item'>2</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setThree(3) }} className='dropdown-item'>3</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setThree(4) }} className='dropdown-item'>4</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setThree(5) }} className='dropdown-item'>5</li>
-                                </ul>
-                            </div></td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1056</td>
+                            <td className='fs-4'>{zeroLT}</td>
                         </tr>
 
                         <tr>
-                            {/* <th scope="row">2</th> */}
-                            <td className='fs-4'>Number of Connections with MD{'>'}CD by +5%:</td>
-                            <td className='fs-4'><div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {four}%
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li onClick={() => { setFour(1) }} className='dropdown-item'>1</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFour(2) }} className='dropdown-item'>2</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFour(3) }} className='dropdown-item'>3</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFour(4) }} className='dropdown-item'>4</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFour(5) }} className='dropdown-item'>5</li>
-                                </ul>
-                            </div></td>
+                            <td className='fs-4'>Number of Connections with MD{'>'}SL by +5%:</td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1056</td>
+                            <td className='fs-4'>{plus5MDSL}</td>
                         </tr>
 
                         <tr>
-                            {/* <th scope="row">2</th> */}
-                            <td className='fs-4'>Number of Connections with MD{'>'}CD by -5%:</td>
-                            <td className='fs-4'><div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {five}%
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li onClick={() => { setFive(1) }} className='dropdown-item'>1</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFive(2) }} className='dropdown-item'>2</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFive(3) }} className='dropdown-item'>3</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFive(4) }} className='dropdown-item'>4</li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li onClick={() => { setFive(5) }} className='dropdown-item'>5</li>
-                                </ul>
-                            </div></td>
+                            <td className='fs-4'>Number of Connections with MD{'>'}SL by -5%:</td>
                             <td><div className="vl"></div></td>
-                            <td className='fs-4'>1056</td>
+                            <td className='fs-4'>{minus5MDSL}</td>
                         </tr>
 
                     </tbody>
