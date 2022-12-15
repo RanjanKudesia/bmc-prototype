@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import firebaseAuthService from '../../firebase/FirebaseAuthService';
 
 
@@ -8,6 +9,7 @@ function SignupPage({ existingUser }) {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
 
     //    This is for making new user
     async function handleSubmit(event) {
@@ -16,7 +18,8 @@ function SignupPage({ existingUser }) {
             await firebaseAuthService.registerUser(userName, password);
             setUserName("");
             setPassword("");
-            alert(`User added with username: ${userName}`)
+            alert(`User added with username: ${userName}`);
+            navigate('/');
         } catch (error) {
             alert(error.message);
         }
@@ -25,7 +28,7 @@ function SignupPage({ existingUser }) {
     return (
         <>
             {
-                (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
+                (existingUser && existingUser.email === 'bmcelectric22@gmail.com') ?
                     <section className="container " id='login-section'>
                         <div className="container py-5 h-100">
                             <div className="row d-flex justify-content-center align-items-center h-100">

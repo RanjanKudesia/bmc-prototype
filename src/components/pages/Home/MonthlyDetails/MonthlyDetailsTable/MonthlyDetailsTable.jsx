@@ -1,83 +1,220 @@
 
 
-function MonthlyDetailsTable({ data }) {
+function MonthlyDetailsTable({ list }) {
 
-    const [minus5] = data;
-
+    let count = 0;
     return (
         <>
-            {/* <table className="table table-secondary table-bordered table-striped border border-secondary">
+            <table id="monthlyDetailsTable" className="table table-hover table-secondary table-bordered table-striped border border-secondary mt-3 pt-5">
 
+                {/* <thead className='table-dark'> */}
                 <thead>
-                    <tr className=''>
+                    <tr>
                         <th scope="col">IVRS Number</th>
                         <th scope="col">Division Name</th>
-                        <th scope="col">Duty</th>
-                        <th scope="col">Energy CHarge</th>
-                        <th scope="col">Final Consumption</th>
+                        <th scope="col">Energy Charge</th>
+                        <th scope="col">Total Consumption</th>
                         <th scope="col">Fixed Charge</th>
-                        <th scope="col">Advance Payment Interest</th>
-                        <th scope="col">Last Paid Date</th>
-                        <th scope="col">Late Pay Charge</th>
-                        <th scope="col">Max Demand</th>
-                        <th scope="col">Meter Number</th>
-                        <th scope="col">Multiplier</th>
-                        <th scope="col">Online Rebate</th>
-                        <th scope="col">Other Charges</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Power Factor</th>
-                        <th scope="col">Present Meter Reading</th>
-                        <th scope="col">Previous Reading</th>
-                        <th scope="col">Pending Amount</th>
-                        <th scope="col">Reading Type</th>
-                        <th scope="col">Sanctioned load</th>
-                        <th scope="col">Security Amount Deposit</th>
-                        <th scope="col">Subsidy Load Factor</th>
-                        <th scope="col">Tariff Cde</th>
+                        <th scope="col">Tariff Code</th>
                     </tr>
                 </thead>
 
                 <tbody>
+
                     {
-                        list.map((x) => {
-                            return <tr>
-                                <td>{x.accountId}</td>
-                                <td>{x.divisionName}</td>
-                                <td>{x.duty}</td>
-                                <td>{x.energyCharge}</td>
-                                <td>{x.finalConsumption}</td>
-                                <td>{x.fixedCharge}</td>
-                                <td>{x.intrestAdvancePayment}</td>
-                                <td>{x.latsPaidDate}</td>
-                                <td>{x.latePayCharge}</td>
-                                <td>{x.maxDemand}</td>
-                                <td>{x.meterNo}</td>
-                                <td>{x.multiplier}</td>
-                                <td>{x.onlineRebate}</td>
-                                <td>{x.otherCharges}</td>
-                                <td>{x.phone2}</td>
-                                <td>{x.powerFactor}</td>
-                                <td>{x.presentMeterReading}</td>
-                                <td>{x.presentReading}</td>
-                                <td>{x.previousPendingAmount}</td>
-                                <td>{x.readingType}</td>
-                                <td>{x.sanctionLoad}</td>
-                                <td>{x.securityAmountDeposit}</td>
-                                <td>{x.subsidyLoadFactor}</td>
-                                <td>{x.tariffCode}</td>
-                            </tr>
-                        })
+                        list.slice(0, 200) ?
+                            list.slice(0, 200).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
                     }
 
+                    {
+                        list.slice(300, 600) ?
+                            list.slice(300, 600).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(600, 900) ?
+                            list.slice(600, 900).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(900, 1200) ?
+                            list.slice(900, 1200).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(1200, 1500) ?
+                            list.slice(1200, 1500).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(1500, 1800) ?
+                            list.slice(1500, 1800).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(1800, 2100) ?
+                            list.slice(1800, 2100).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(2100, 2400) ?
+                            list.slice(2100, 2400).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+                    {
+                        list.slice(2400, 2612) ?
+                            list.slice(2400, 2612).map((x) => {
+                                if (!x) {
+                                    return null;
+                                } else {
+                                    count++;
+                                }
+                                return (
+                                    <tr>
+                                        <td>{x.accountId}</td>
+                                        <td>{x.divisionName}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.tariffCode}</td>
+                                    </tr>
+                                )
+                            }) : null
+                    }
+
+
+
                 </tbody >
-            </table > */}
-
-
-            {/* <ul>
-                {
-                    list[0].duty
-                }
-            </ul> */}
+            </table >
+            {console.log(count)}
         </>
     )
 }

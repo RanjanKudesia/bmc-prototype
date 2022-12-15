@@ -22,13 +22,13 @@ const App = ({ data }) => {
   return (
     <>
       <Routes>
-        <Route exact element={<NavigationBar existingUser={user} />}>
-          <Route path='/' element={user ? <Home data={data} existingUser={user} /> : <LoginPage existingUser={user} />} />
+        <Route element={<NavigationBar existingUser={user} />}>
+          <Route exact path='/' element={user ? <Home data={data} existingUser={user} /> : <LoginPage data={data} existingUser={user} />} />
           <Route path='analysisPage' element={<AnalysisPage data={data} existingUser={user} />} />
           <Route path='commercial' element={<Commercial data={data} existingUser={user} />} />
           <Route path='monthlyDetails' element={<MonthlyDetails data={data} existingUser={user} />} />
           <Route path="signup" element={<SignupPage existingUser={user} />} />
-          <Route path="login" element={<LoginPage existingUser={user} />} />
+          <Route path="login" element={<LoginPage data={data} existingUser={user} />} />
           <Route path="resetPassword" element={<ResetPassword existingUser={user} />} />
           <Route path="*" element={<Error />} />
         </Route>

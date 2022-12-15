@@ -12,7 +12,6 @@ function Commercial({ data, existingUser }) {
                             <div className="container py-5 h-100">
                                 <h1 className='d-flex justify-content-center mb-3'>Commercial Details</h1>
                                 <CommercialDetails data={data} />
-                                {/* <DashBoard data={data} existingUser={existingUser} /> */}
                             </div>
                         </section>
                     </>

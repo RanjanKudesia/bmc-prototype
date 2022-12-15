@@ -2,15 +2,21 @@ import { Outlet, Link } from 'react-router-dom';
 import firebaseAuthService from '../../../firebase/FirebaseAuthService';
 import BMCLogo from '../../assets/bmc_logo_old1.png';
 import LatentLogo from '../../assets/logo.png';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 function NavigationBar({ existingUser }) {
 
+    const navigate = useNavigate();
+
+    // const admin = process.env.ADMIN_EMAIL;
+    // console.log(admin)
+
     function handleLogout() {
         firebaseAuthService.logoutUser();
-    }
+        navigate('/');
 
+    }
 
     function HeaderView() {
         const location = (useLocation().pathname);
@@ -24,7 +30,7 @@ function NavigationBar({ existingUser }) {
             <section className='navbar-background'>
                 <nav className="container navbar navbar-expand-lg navbar-color">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" to='home'>
+                        <Link className="navbar-brand" to=''>
                             <img className='nav-logo' src={BMCLogo} alt="BMC-logo" />
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +46,7 @@ function NavigationBar({ existingUser }) {
                                             <Link className="nav-link" to={'/'}>Home</Link>
                                     }
                                 </li>
-                                {/* <li className="nav-item">
-                                    <Link className="nav-link" to="dashBoard">Dashboard</Link>
-                                </li> */}
+
                                 <li className="nav-item">
                                     {
                                         (location === 'analysisPage') ?
@@ -51,6 +55,7 @@ function NavigationBar({ existingUser }) {
                                             <Link className="nav-link" to="analysisPage">Analysis</Link>
                                     }
                                 </li>
+
                                 <li className="nav-item">
                                     {(location === 'commercial') ?
                                         <Link className="nav-link Active" to="commercial">Commercial</Link>
@@ -58,8 +63,17 @@ function NavigationBar({ existingUser }) {
                                         <Link className="nav-link" to="commercial">Commercial</Link>
                                     }
                                 </li>
+
+                                <li className="nav-item">
+                                    {(location === 'monthlyDetails') ?
+                                        <Link className="nav-link Active" to="monthlyDetails">Data</Link>
+                                        :
+                                        <Link className="nav-link" to="monthlyDetails">Data</Link>
+                                    }
+                                </li>
+
                                 {
-                                    (existingUser && existingUser.email === 'ranjan.kudesia@gmail.com') ?
+                                    (existingUser && existingUser.email === 'bmcelectric22@gmail.com') ?
                                         <li className="nav-item">
                                             {(location === 'signup') ?
                                                 <Link className="nav-link Active" to="signup">Add Users</Link>
@@ -68,13 +82,10 @@ function NavigationBar({ existingUser }) {
                                             }
                                         </li> : null
                                 }
-                                <li className="nav-item">
-                                    {(location === 'monthlyDetails') ?
-                                        <Link className="nav-link Active" to="monthlyDetails">Monthly-Details</Link>
-                                        :
-                                        <Link className="nav-link" to="monthlyDetails">Monthly-Details</Link>
-                                    }
-                                </li>
+
+
+
+
 
 
                             </ul>
@@ -114,7 +125,7 @@ function NavigationBar({ existingUser }) {
             <Outlet />
             <footer className='d-flex justify-content-center container mb-0 copyright'>
                 <h5 className='d-flex mt-3 flex-wrap'>
-                    Made and created by Latent Renewable Energies Pvt Ltd for Municipal Corporation Bhopal
+                    Made by Latent Renewable Energies Pvt Ltd for Municipal Corporation Bhopal
                 </h5>
             </footer>
         </>

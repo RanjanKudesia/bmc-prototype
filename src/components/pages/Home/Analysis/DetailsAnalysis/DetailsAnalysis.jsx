@@ -19,13 +19,13 @@ function DetailsAnalysis({ data, type }) {
                     <tbody>
 
                         <tr>
-                            <td className='fs-4'>Number of Connections with Energy Variations +5:</td>
+                            <td className='fs-4'>Number of Connections with Energy Variations +5%:</td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>{plus5}</td>
                         </tr>
 
                         <tr>
-                            <td className='fs-4'>Number of Connections with Energy Variations -5:</td>
+                            <td className='fs-4'>Number of Connections with Energy Variations -5%:</td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>{minus5}</td>
                         </tr>
@@ -37,13 +37,13 @@ function DetailsAnalysis({ data, type }) {
                         </tr>
 
                         <tr>
-                            <td className='fs-4'>Number of Connections with MD{'>'}SL by +5%:</td>
+                            <td className='fs-4'>Number of Connections with MD{'>'}SL by +20%:</td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>{plus5MDSL}</td>
                         </tr>
 
                         <tr>
-                            <td className='fs-4'>Number of Connections with MD{'>'}SL by -5%:</td>
+                            <td className='fs-4'>Number of Connections with MD{'>'}SL by -10%:</td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>{minus5MDSL}</td>
                         </tr>

@@ -8,7 +8,7 @@ const ChartsPage = ({ data, type }) => {
 
     const state = {
         dataDoughnut: {
-            labels: ['Energy Variation +5', 'Energy Variation -5', 'Zero Energy Consumption', 'MD>CD by +5%', 'MD>CD by -5%'],
+            labels: ['Energy Variation +5', 'Energy Variation -5', 'Zero Energy Consumption', 'MD>SL by +20%', 'MD>SL by -10%'],
             datasets: [
                 {
                     data: [plus5, minus5, zeroLT, plus5MDSL, minus5MDSL],

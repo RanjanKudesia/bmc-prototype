@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import firebaseAuthService from '../../firebase/FirebaseAuthService';
+import { useNavigate } from 'react-router-dom';
 import Home from './../pages/Home/home/Home';
 
-const LoginPage = ({ existingUser }) => {
-
+const LoginPage = ({ data, existingUser }) => {
+    const navigate = useNavigate();
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -13,6 +14,7 @@ const LoginPage = ({ existingUser }) => {
             await firebaseAuthService.LoginUser(userName, password);
             setUserName("");
             setPassword("");
+            navigate('/');
         } catch (error) {
             alert(error.message);
         }
@@ -22,7 +24,7 @@ const LoginPage = ({ existingUser }) => {
     return (
         <>
             {
-                existingUser ? <Home existingUser={existingUser} />
+                existingUser ? <Home data={data} existingUser={existingUser} />
                     :
                     <section className="container" id='login-section'>
                         <div className="container py-5 h-100">
@@ -30,8 +32,8 @@ const LoginPage = ({ existingUser }) => {
                                 <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                                     <div className="card shadow-2-strong" id='login-card'>
                                         <div className="card-body p-5 text-center">
-                                            <h1 className="mb-5" style={{color:'#fd5f00'}}>Login</h1>
-                                            <form onSubmit={handleSubmit}>
+                                            <h1 className="mb-5" style={{ color: '#fd5f00' }}>Login</h1>
+                                            <form onSubmit={handleSubmit} >
                                                 <div className="form-outline mb-4">
                                                     <label className="form-label" htmlFor="typeEmailX-2">
                                                         <h5 className='contact-text'>

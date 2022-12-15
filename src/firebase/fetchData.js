@@ -89,7 +89,7 @@ async function getSpecificMonthData(month_year) {
 async function sortedData() {
     try {
         const data = await getSixMonthsData();
-        const { first, second, third, fourth, fifth } = data;
+        const { first, second, third, fourth, fifth, sixth } = data;
 
         const totalConnections = first.length;
         let totalLoad = 0,
@@ -104,26 +104,41 @@ async function sortedData() {
             plus5MDSLList = [],
             minus5MDSLList = [],
             zeroLTList = [],
-            totalPowerFactorLessThan8List = []
+            totalPowerFactorLessThan8List = [],
+            PowerFactorLessThan8TotalWeldingCharge = 0,
+            firstTotalConsumption = 0,
+            firstTotalBill = 0,
+            secondTotalConsumption = 0,
+            secondTotalBill = 0,
+            thirdTotalConsumption = 0,
+            thirdTotalBill = 0,
+            fourthTotalConsumption = 0,
+            fourthTotalBill = 0,
+            fifthTotalConsumption = 0,
+            fifthTotalBill = 0,
+            sixthTotalConsumption = 0,
+            sixthTotalBill = 0
             ;
 
         for (let i = 0; i < totalConnections; i++) {
             totalLoad += parseInt(first[i].maxDemand);
             totalEnergy += parseInt(first[i].totalConsumption);
             totalBill += parseInt(first[i].totalAmountAfterDueDate);
-            if (parseInt(first[i].powerFactor) < 0.8) {
+            if (0 < parseFloat(first[i].powerFactor) < 0.8) {
                 totalPowerFactorLessThan8++;
                 totalPowerFactorLessThan8List.push(first[i]);
+                PowerFactorLessThan8TotalWeldingCharge+=parseFloat(first[i].weldingSurcharge);
             }
             surchargePayableOnDelay += parseInt(first[i].latePayCharge);
 
 
             let currentMaxDemand = parseInt(first[i].maxDemand);
             let currentSanctionedLoad = parseInt(first[i].sanctionLoad.slice(0, -2));
-            if ((((currentMaxDemand - currentSanctionedLoad) / currentSanctionedLoad * 100) > 5)) {
+
+            if ((((currentMaxDemand - currentSanctionedLoad) / currentSanctionedLoad * 100) > 20)) {
                 plus5MDSL++;
                 plus5MDSLList.push(first[i]);
-            } else if ((((currentSanctionedLoad - currentMaxDemand) / currentSanctionedLoad * 100) > 5)) {
+            } else if ((((currentSanctionedLoad - currentMaxDemand) / currentSanctionedLoad * 100) > 10)) {
                 minus5MDSL++;
                 minus5MDSLList.push(first[i]);
             }
@@ -131,35 +146,74 @@ async function sortedData() {
         }
 
 
+        //todo:For the Graph
+        firstTotalConsumption = totalEnergy;
+        firstTotalBill = totalBill;
+        for (let i = 0; i < second.length; i++) {
+            secondTotalConsumption += parseInt(second[i].totalConsumption);
+            secondTotalBill += parseInt(second[i].totalAmountAfterDueDate);
+        }
+        for (let i = 0; i < third.length; i++) {
+            thirdTotalConsumption += parseInt(third[i].totalConsumption);
+            thirdTotalBill += parseInt(third[i].totalAmountAfterDueDate);
+        }
+        for (let i = 0; i < fourth.length; i++) {
+            fourthTotalConsumption += parseInt(fourth[i].totalConsumption);
+            fourthTotalBill += parseInt(fourth[i].totalAmountAfterDueDate);
+        }
+        for (let i = 0; i < fifth.length; i++) {
+            fifthTotalConsumption += parseInt(fifth[i].totalConsumption);
+            fifthTotalBill += parseInt(fifth[i].totalAmountAfterDueDate);
+        }
+        for (let i = 0; i < sixth.length; i++) {
+            sixthTotalConsumption += parseInt(sixth[i].totalConsumption);
+            sixthTotalBill += parseInt(sixth[i].totalAmountAfterDueDate);
+        }
+
+
+
         let plus5 = 0,
             minus5 = 0,
-            zeroLT = 0;
+            zeroLT = 0,
+            zeroLTFixedCharge = 0,
+            zeroLTSecurityAmountDeposit = 0
+            ;
 
+        for (let i = 0; i < first.length; i++) {
+            if (!parseInt(first[i].totalConsumption)) {
+                zeroLT++;
+                zeroLTList.push(first[i]);
+                zeroLTFixedCharge += parseFloat(first[i].fixedCharge);
+                zeroLTSecurityAmountDeposit += parseFloat(first[i].securityAmountDeposit);
+            }
+        }
 
         for (let i = 0; i < second.length; i++) {
             const thisMonthAccountData = first.find((x) => {
                 return x.accountId === second[i].accountId;
             })
             const previousMonthAccountData = second[i];
-            if (!thisMonthAccountData) {
-                continue;
-            } else {
-                if (parseInt(thisMonthAccountData.totalConsumption) === 0) {
-                    zeroLT++;
-                    zeroLTList.push(first[i]);
-                }
-                if ((parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption))) {
+            if (thisMonthAccountData) {
+                if ((parseInt(thisMonthAccountData.totalConsumption) > parseInt(previousMonthAccountData.totalConsumption)) && parseInt(previousMonthAccountData.totalConsumption) !== 0) {
                     const result = ((parseFloat(thisMonthAccountData.totalConsumption) - parseFloat(previousMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
-                    if ((result) >= 5) {
+                    if (result >= 5) {
                         plus5++;
-                        plus5List.push(first[i]);
+                        plus5List.push(thisMonthAccountData);
                     }
-                } else {
+                }
+                else if (!parseInt(previousMonthAccountData.totalConsumption) && parseInt(thisMonthAccountData.totalConsumption)) {
+                    plus5++;
+                    plus5List.push(thisMonthAccountData);
+                }
+                else if (parseFloat(thisMonthAccountData.totalConsumption) !== 0.0 && parseFloat(previousMonthAccountData.totalConsumption) !== 0.0) {
                     const result = ((parseFloat(previousMonthAccountData.totalConsumption) > parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
                     if ((result) >= 5) {
                         minus5++;
-                        minus5List.push(first[i]);
+                        minus5List.push(thisMonthAccountData);
                     }
+                } else if (parseFloat(previousMonthAccountData.totalConsumption) !== 0 && parseFloat(thisMonthAccountData.totalConsumption) === 0) {
+                    minus5++;
+                    minus5List.push(thisMonthAccountData);
                 }
             }
         }
@@ -174,13 +228,34 @@ async function sortedData() {
             plus5MDSL,
             minus5MDSL,
             totalPowerFactorLessThan8,
+            PowerFactorLessThan8TotalWeldingCharge,
             surchargePayableOnDelay,
             plus5List,
             minus5List,
             plus5MDSLList,
             minus5MDSLList,
             zeroLTList,
+            zeroLTFixedCharge,
+            zeroLTSecurityAmountDeposit,
             totalPowerFactorLessThan8List,
+            firstTotalConsumption,
+            secondTotalConsumption,
+            thirdTotalConsumption,
+            fourthTotalConsumption,
+            fifthTotalConsumption,
+            sixthTotalConsumption,
+            firstTotalBill,
+            secondTotalBill,
+            thirdTotalBill,
+            fourthTotalBill,
+            fifthTotalBill,
+            sixthTotalBill,
+            first,
+            second,
+            third,
+            fourth,
+            fifth,
+            sixth
         }
     } catch (error) {
         console.error('Error', error.message);

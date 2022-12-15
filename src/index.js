@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Circles } from 'react-loader-spinner';
+import Loading from './components/pages/Loading/Loading';
 import App from './App';
 import { sortedData } from '../src/firebase/fetchData';
 
@@ -13,17 +13,7 @@ async function fetchData() {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <div className='container'>
-          <Circles
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="circles-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-        </div>
+        <Loading />
       </BrowserRouter>
     </React.StrictMode>
   );

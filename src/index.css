@@ -24,7 +24,7 @@
     background-color: #fd5f00;
 }
 
-.Active{
+.Active {
     color: aliceblue;
     background-color: #fd5f00;
 }
@@ -73,6 +73,12 @@
 
 #floatingSelect-bmc {
     width: 20rem;
+    /* position: relative;
+    left: 100px; */
+}
+
+#floatingSelect-listType {
+    width: 29rem;
     /* position: relative;
     left: 100px; */
 }
@@ -153,12 +159,16 @@
     height: 40px;
 }
 
-#analysis-table{
+#analysis-table {
     width: 57rem;
 }
 
-.chart-size{
+.chart-size {
     min-width: 22rem;
+}
+
+#monthlyDetailsTable {
+    /* min-width: 30rem; */
 }
 
 .copyright {
