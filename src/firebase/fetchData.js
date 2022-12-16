@@ -1,5 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 import { db } from './FirebaseConfig';
+import locationData from "./data/locationData";
 
 async function sortSequenceData() {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
@@ -91,6 +92,33 @@ async function sortedData() {
         const data = await getSixMonthsData();
         const { first, second, third, fourth, fifth, sixth } = data;
 
+        
+
+        let firstWithLocation = []
+
+        for (let i = 0; i < first.length; i++) {
+
+            const t = locationData.find((x) => {
+                return (x.connection_number === first[i]['accountId']);
+            })
+
+            let o = first.find((x) => {
+                return (x["accountId"] === first[i].accountId);
+            })
+
+            if (t) {
+                o.latitude = t.latitude;
+                o.longitude = t.longitude;
+            }
+            else {
+                o.latitude = '';
+                o.longitude = '';
+            }
+
+            firstWithLocation.push(o);
+        }
+
+
         const totalConnections = first.length;
         let totalLoad = 0,
             totalEnergy = 0,
@@ -124,10 +152,10 @@ async function sortedData() {
             totalLoad += parseInt(first[i].maxDemand);
             totalEnergy += parseInt(first[i].totalConsumption);
             totalBill += parseInt(first[i].totalAmountAfterDueDate);
-            if (0 < parseFloat(first[i].powerFactor) < 0.8) {
+            if (0 < parseFloat(first[i].powerFactor) && parseFloat(first[i].powerFactor) < 0.8) {
                 totalPowerFactorLessThan8++;
                 totalPowerFactorLessThan8List.push(first[i]);
-                PowerFactorLessThan8TotalWeldingCharge+=parseFloat(first[i].weldingSurcharge);
+                PowerFactorLessThan8TotalWeldingCharge += parseFloat(first[i].weldingSurcharge);
             }
             surchargePayableOnDelay += parseInt(first[i].latePayCharge);
 
@@ -235,9 +263,9 @@ async function sortedData() {
             plus5MDSLList,
             minus5MDSLList,
             zeroLTList,
+            totalPowerFactorLessThan8List,
             zeroLTFixedCharge,
             zeroLTSecurityAmountDeposit,
-            totalPowerFactorLessThan8List,
             firstTotalConsumption,
             secondTotalConsumption,
             thirdTotalConsumption,
@@ -250,6 +278,7 @@ async function sortedData() {
             fourthTotalBill,
             fifthTotalBill,
             sixthTotalBill,
+            firstWithLocation,
             first,
             second,
             third,

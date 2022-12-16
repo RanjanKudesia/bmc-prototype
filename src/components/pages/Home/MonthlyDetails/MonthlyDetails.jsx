@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BeforeLogin from "../../BeforeLogin/BeforeLogin"
 import MonthlyDetailsTable from "./MonthlyDetailsTable/MonthlyDetailsTable"
+import DownloadButton from './DownloadButton';
+
+
 
 function MonthlyDetails({ data, existingUser }) {
 
-    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList } = data;
-
-    const listType = [plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList];
-    const [list, setList] = useState(0);
-
+    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List } = data;
+    const array = [plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List];
+    const [list, setList] = useState('fifth');
 
 
     return (
@@ -22,21 +23,25 @@ function MonthlyDetails({ data, existingUser }) {
                             <div className='d-flex justify-content-center'>
 
                                 <div className="form-floating mt-3 mb-3 " id="floatingSelect-listType">
-                                    <select className="form-select" onChange={(event) => { setList(event.target.value) }} defaultValue={0}>
-                                        <option value={0}>LT Number of Connections with Energy Variations of +5%</option>
-                                        <option value={1}>LT Number of Connections with Energy Variations of -5%</option>
-                                        <option value={2}>LT Number of Connections with zero Energy Consumption:</option>
-                                        <option value={3}>Number of Connections with MD{'>'}SL by +20%</option>
-                                        <option value={4}>Number of Connections with SL{'>'}MD by +10%</option>
+                                    <select className="form-select" onChange={(event) => { setList(event.target.value) }} defaultValue={'fifth'}>
+                                        <option key={0} value={'zero'}>LT Connections with Energy Variations of +5%</option>
+                                        <option key={1} value={'first'}>LT Connections with Energy Variations of -5%</option>
+                                        <option key={2} value={'second'}>LT Connections with zero Energy Consumption:</option>
+                                        <option key={3} value={'third'}>LT Connections with MD{'>'}SL by +20%</option>
+                                        <option key={4} value={'fourth'}>LT Connections with SL{'>'}MD by +10%</option>
+                                        <option key={5} value={'fifth'}>Total live LT Connections</option>
+                                        <option key={6} value={'sixth'}>LT Connections with power-factor less than 0.8</option>
                                     </select>
-                                    <label htmlFor="floatingSelect">Area</label>
+                                    <label htmlFor="floatingSelect">Specific Connections</label>
                                 </div>
                             </div>
-                            {/* <div className='d-flex justify-content-center'></div> */}
-                            <div className='d-flex justify-content-center'>
-                                <MonthlyDetailsTable list={listType[list]} />
+                            <div className=' d-flex justify-content-center'>
+                                <DownloadButton data={data} list={list} />
                             </div>
                         </div>
+                        {/* <div className='d-flex justify-content-center'> */}
+                        <MonthlyDetailsTable data={data} list={list} />
+                        {/* </div> */}
 
                     </>
                     :

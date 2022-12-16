@@ -333,6 +333,20 @@ function MonthlyDetailsTable({ x, list }) {
                             {x.weldingSurcharge}
                         </td>
                     </tr>
+                    <tr>
+                        <td className='fs-4'>Latitude</td>
+                        <td><div className="vl"></div></td>
+                        <td className="fs-5">
+                            {x.latitude}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className='fs-4'>Longitude</td>
+                        <td><div className="vl"></div></td>
+                        <td className="fs-5">
+                            {x.longitude}
+                        </td>
+                    </tr>
                 </tbody >
             </table >
 

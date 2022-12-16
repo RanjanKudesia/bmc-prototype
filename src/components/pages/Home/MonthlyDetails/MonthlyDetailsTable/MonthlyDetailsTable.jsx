@@ -1,220 +1,49 @@
+import Zero from "./zero";
+import One from "./one";
+import Two from "./two";
+import Three from "./three";
+import Four from "./four";
+import Five from "./five";
+import Six from './six';
 
+function MonthlyDetailsTable({ data, list }) {
 
-function MonthlyDetailsTable({ list }) {
+    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List } = data;
 
-    let count = 0;
     return (
         <>
-            <table id="monthlyDetailsTable" className="table table-hover table-secondary table-bordered table-striped border border-secondary mt-3 pt-5">
 
-                {/* <thead className='table-dark'> */}
-                <thead>
-                    <tr>
-                        <th scope="col">IVRS Number</th>
-                        <th scope="col">Division Name</th>
-                        <th scope="col">Energy Charge</th>
-                        <th scope="col">Total Consumption</th>
-                        <th scope="col">Fixed Charge</th>
-                        <th scope="col">Tariff Code</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    {
-                        list.slice(0, 200) ?
-                            list.slice(0, 200).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(300, 600) ?
-                            list.slice(300, 600).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(600, 900) ?
-                            list.slice(600, 900).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(900, 1200) ?
-                            list.slice(900, 1200).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(1200, 1500) ?
-                            list.slice(1200, 1500).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(1500, 1800) ?
-                            list.slice(1500, 1800).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(1800, 2100) ?
-                            list.slice(1800, 2100).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(2100, 2400) ?
-                            list.slice(2100, 2400).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-                    {
-                        list.slice(2400, 2612) ?
-                            list.slice(2400, 2612).map((x) => {
-                                if (!x) {
-                                    return null;
-                                } else {
-                                    count++;
-                                }
-                                return (
-                                    <tr>
-                                        <td>{x.accountId}</td>
-                                        <td>{x.divisionName}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.tariffCode}</td>
-                                    </tr>
-                                )
-                            }) : null
-                    }
-
-
-
-                </tbody >
-            </table >
-            {console.log(count)}
+            {
+                (list === 'zero' && <Zero list={plus5List} />)
+                    ?
+                    <Zero list={plus5List} />
+                    :
+                    (list === 'first' && <One list={minus5List} />)
+                        ?
+                        <One list={minus5List} />
+                        :
+                        (list === 'second' && <Two list={zeroLTList} />)
+                            ?
+                            <Two list={zeroLTList} />
+                            :
+                            (list === 'third' && <Three list={plus5MDSLList} />)
+                                ?
+                                <Three list={plus5MDSLList} />
+                                :
+                                (list === 'fourth' && <Four list={minus5MDSLList} />)
+                                    ?
+                                    <Four list={minus5MDSLList} />
+                                    :
+                                    (list === 'fifth' && <Five list={first} />)
+                                        ?
+                                        <Five list={first} />
+                                        :
+                                        (list === 'sixth' && <Six list={totalPowerFactorLessThan8List} />)
+                                            ?
+                                            <Six list={totalPowerFactorLessThan8List} />
+                                            :
+                                            null
+            }
         </>
     )
 }
