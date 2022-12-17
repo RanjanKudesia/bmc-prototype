@@ -2,7 +2,7 @@
 
 function CommercialDetails({ data }) {
 
-    const { totalBill, zeroLT, zeroLTFixedCharge, zeroLTSecurityAmountDeposit, surchargePayableOnDelay, totalPowerFactorLessThan8, PowerFactorLessThan8TotalWeldingCharge } = data;
+    const { totalFirstWithPDC, totalBill, zeroLT, zeroLTFixedCharge, zeroLTSecurityAmountDeposit, surchargePayableOnDelay, totalPowerFactorLessThan8, PowerFactorLessThan8TotalWeldingCharge } = data;
 
     return (
         <>
@@ -63,6 +63,12 @@ function CommercialDetails({ data }) {
                             <td className='fs-4'>Total Welding Surcharge of LT connections with power-factor less than 0.8 (Rs):</td>
                             <td><div className="vl"></div></td>
                             <td className='fs-4'>{parseInt(PowerFactorLessThan8TotalWeldingCharge)}</td>
+                        </tr>
+
+                        <tr>
+                            <td className='fs-4'>LT Connections with PDC :</td>
+                            <td><div className="vl"></div></td>
+                            <td className='fs-4'>{parseInt(totalFirstWithPDC)}</td>
                         </tr>
 
 

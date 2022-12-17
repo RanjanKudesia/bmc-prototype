@@ -11,9 +11,9 @@ function Six({ list }) {
                     <tr>
                         <th scope="col">IVRS Number</th>
                         <th scope="col">Distribution Center</th>
-                        <th scope="col">Power Factor</th>
                         <th scope="col">Tariff Code</th>
-                        {/* <th scope="col">Variation</th> */}
+                        <th scope="col">Power Factor</th>
+                        <th scope="col">Welding Charge</th>
                     </tr>
                 </thead>
 
@@ -31,8 +31,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.powerFactor}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -50,11 +51,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -72,11 +71,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -94,11 +91,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -116,11 +111,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -138,11 +131,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -160,11 +151,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.totalConsumption}</td>
-                                        <td>{x.fixedCharge}</td>
-                                        <td>{x.totalAmountAfterDueDate}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -182,10 +171,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null
@@ -203,10 +191,9 @@ function Six({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.powerFactor}</td>
+                                        <td>{x.weldingSurcharge}</td>
                                     </tr>
                                 )
                             }) : null

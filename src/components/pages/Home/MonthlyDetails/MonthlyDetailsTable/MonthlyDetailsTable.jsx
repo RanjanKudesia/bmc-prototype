@@ -8,7 +8,7 @@ import Six from './six';
 
 function MonthlyDetailsTable({ data, list }) {
 
-    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List } = data;
+    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, updatedFirst, totalPowerFactorLessThan8List } = data;
 
     return (
         <>
@@ -34,9 +34,9 @@ function MonthlyDetailsTable({ data, list }) {
                                     ?
                                     <Four list={minus5MDSLList} />
                                     :
-                                    (list === 'fifth' && <Five list={first} />)
+                                    (list === 'fifth' && <Five list={updatedFirst} />)
                                         ?
-                                        <Five list={first} />
+                                        <Five list={updatedFirst} />
                                         :
                                         (list === 'sixth' && <Six list={totalPowerFactorLessThan8List} />)
                                             ?

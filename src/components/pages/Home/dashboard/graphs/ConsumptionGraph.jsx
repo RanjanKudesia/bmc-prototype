@@ -5,29 +5,29 @@ import { MDBContainer } from "mdbreact";
 const ChartsPage = ({ data, show, }) => {
 
     const consumption = [
-        data.sixthTotalConsumption,
-        data.fifthTotalConsumption,
-        data.fourthTotalConsumption,
-        data.thirdTotalConsumption,
-        data.secondTotalConsumption,
-        data.firstTotalConsumption,
+        data.sixthTotalConsumption/10000000,
+        data.fifthTotalConsumption/10000000,
+        data.fourthTotalConsumption/10000000,
+        data.thirdTotalConsumption/10000000,
+        data.secondTotalConsumption/10000000,
+        data.firstTotalConsumption/10000000,
     ]
     const amount = [
-        data.sixthTotalBill,
-        data.fifthTotalBill,
-        data.fourthTotalBill,
-        data.thirdTotalBill,
-        data.secondTotalBill,
-        data.firstTotalBill,
+        data.sixthTotalBill/10000000,
+        data.fifthTotalBill/10000000,
+        data.fourthTotalBill/10000000,
+        data.thirdTotalBill/10000000,
+        data.secondTotalBill/10000000,
+        data.firstTotalBill/10000000,
     ]
     let state;
     if (show === 'Consumption') {
         state = {
             dataLine: {
-                labels: ['June','July','August','September','October','November'],
+                labels: ['JUN','JUL','AUG','SEP','OCT','NOV'],
                 datasets: [
                     {
-                        label: show,
+                        label: 'Cr kWh',
                         fill: true,
                         lineTension: 0,
                         backgroundColor: "rgba(225, 204,230, .3)",
@@ -53,10 +53,10 @@ const ChartsPage = ({ data, show, }) => {
     } else {
         state = {
             dataLine: {
-                labels: ['June','July','August','September','October','November'],
+                labels: ['JUN','JUL','AUG','SEP','OCT','NOV'],
                 datasets: [
                     {
-                        label: show,
+                        label: 'Cr Rs',
                         fill: true,
                         lineTension: 0,
                         backgroundColor: "rgba(225, 204,230, .3)",

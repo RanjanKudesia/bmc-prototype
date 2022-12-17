@@ -11,10 +11,10 @@ function Three({ list }) {
                     <tr>
                         <th scope="col">IVRS Number</th>
                         <th scope="col">Distribution Center</th>
+                        <th scope="col">Tariff Code</th>
                         <th scope="col">Sanctioned Load</th>
                         <th scope="col">Contract Demand</th>
                         <th scope="col">Maximum Demand</th>
-                        <th scope="col">Tariff Code</th>
                     </tr>
                 </thead>
 
@@ -32,10 +32,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.sanctionLoad}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.sanctionLoad}</td>
+                                        <td>{x.contractDemand}</td>
+                                        <td>{x.maxDemand}</td>
                                     </tr>
                                 )
                             }) : null
@@ -53,10 +53,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -74,10 +74,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -95,10 +95,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -116,10 +116,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -137,10 +137,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -158,10 +158,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -179,10 +179,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -200,10 +200,10 @@ function Three({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null

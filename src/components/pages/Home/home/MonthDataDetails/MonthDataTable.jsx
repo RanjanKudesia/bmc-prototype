@@ -17,6 +17,19 @@ function MonthlyDetailsTable({ x, list }) {
                             {x.accountId}
                         </td>
                     </tr>
+
+                    {
+                        x.latitude ?
+                            <tr>
+                                <td className='fs-4'>Location</td>
+                                <td><div className="vl"></div></td>
+                                <td className="fs-5">
+                                    <a href={`https://maps.google.com/?q=${x.latitude},${x.longitude}`} rel='noreferrer' target='_blank'>Map Link</a>
+                                </td>
+                            </tr> : null
+                    }
+
+
                     <tr>
                         <td className='fs-4'>Address-1</td>
                         <td><div className="vl"></div></td>
@@ -333,20 +346,7 @@ function MonthlyDetailsTable({ x, list }) {
                             {x.weldingSurcharge}
                         </td>
                     </tr>
-                    <tr>
-                        <td className='fs-4'>Latitude</td>
-                        <td><div className="vl"></div></td>
-                        <td className="fs-5">
-                            {x.latitude}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className='fs-4'>Longitude</td>
-                        <td><div className="vl"></div></td>
-                        <td className="fs-5">
-                            {x.longitude}
-                        </td>
-                    </tr>
+
                 </tbody >
             </table >
 

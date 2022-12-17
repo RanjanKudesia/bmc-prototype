@@ -19,7 +19,6 @@ async function fetchData() {
   );
 
   const data = await sortedData();
-  console.log(data);
 
   root.render(
     <React.StrictMode>

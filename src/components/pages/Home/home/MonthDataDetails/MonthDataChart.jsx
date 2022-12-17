@@ -25,10 +25,10 @@ function MonthDataChart({ data, x }) {
 
     const state = {
         dataLine: {
-            labels: ['June', 'July', 'August', 'September', 'October', 'November'],
+            labels: ['JUN','JUL','AUG','SEP','OCT','NOV'],
             datasets: [
                 {
-                    label: 'Consumption',
+                    label: 'kWh',
                     fill: true,
                     lineTension: 0,
                     backgroundColor: "rgba(225, 204,230, .3)",

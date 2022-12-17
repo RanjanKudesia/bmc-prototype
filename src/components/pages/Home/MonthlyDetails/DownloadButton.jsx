@@ -4,7 +4,7 @@ import { CSVLink } from "react-csv";
 
 function DownloadButton({ data, list }) {
 
-    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, firstWithLocation, totalPowerFactorLessThan8List } = data;
+    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, updatedFirst, totalPowerFactorLessThan8List } = data;
 
 
     return (
@@ -26,13 +26,13 @@ function DownloadButton({ data, list }) {
                                     <CSVLink className='btn btn-secondary' data={minus5MDSLList}>Download Details for above list</CSVLink>
                                     :
                                     (list === 'fifth') ?
-                                        <CSVLink className='btn btn-secondary' data={firstWithLocation}>Download Details for above list</CSVLink>
+                                        <CSVLink className='btn btn-secondary' data={updatedFirst}>Download Details for above list</CSVLink>
                                         :
                                         (list === 'sixth') ?
                                             <CSVLink className='btn btn-secondary' data={totalPowerFactorLessThan8List}>Download Details for above list</CSVLink>
                                             :
                                             null
-                
+
             }
         </>
     )

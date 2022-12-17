@@ -12,10 +12,10 @@ function Zero({ list }) {
                     <tr>
                         <th scope="col">IVRS Number</th>
                         <th scope="col">Distribution Center</th>
-                        <th scope="col">Energy Charge</th>
-                        <th scope="col">Previous Month Reading</th>
-                        <th scope="col">This Month Reading</th>
                         <th scope="col">Tariff Code</th>
+                        <th scope="col">Energy Charge</th>
+                        <th scope="col">Previous Month Consumption</th>
+                        <th scope="col">This Month Consumption</th>
                         {/* <th scope="col">Variation</th> */}
                     </tr>
                 </thead>
@@ -34,10 +34,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -55,10 +55,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -76,10 +76,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -97,10 +97,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -118,10 +118,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -139,10 +139,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -160,10 +160,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -181,10 +181,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null
@@ -202,10 +202,10 @@ function Zero({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.previousMonthConsumption}</td>
+                                        <td>{x.totalConsumption}</td>
                                     </tr>
                                 )
                             }) : null

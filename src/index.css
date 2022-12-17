@@ -172,7 +172,7 @@
 }
 
 #monthlyDetailsTable {
-    min-width:inherit;
+    /* max-width:50rem; */
 }
 
 .copyright {

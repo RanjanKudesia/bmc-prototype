@@ -36,8 +36,8 @@ function MonthlyDetails({ data, existingUser }) {
                             <div className=' d-flex justify-content-center'>
                                 <DownloadButton data={data} list={list} />
                             </div>
-                        </div>
                         <MonthlyDetailsTable data={data} list={list} />
+                        </div>
                     </>
                     :
                     <BeforeLogin />

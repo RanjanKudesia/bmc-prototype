@@ -92,19 +92,29 @@ async function sortedData() {
         const data = await getSixMonthsData();
         const { first, second, third, fourth, fifth, sixth } = data;
 
-        
 
-        let firstWithLocation = []
+
+        let updatedFirst = []
 
         for (let i = 0; i < first.length; i++) {
 
             const t = locationData.find((x) => {
-                return (x.connection_number === first[i]['accountId']);
+                return (x.connection_number === first[i].accountId);
+            })
+
+            const s = second.find((x) => {
+                return (x.accountId === first[i].accountId);
             })
 
             let o = first.find((x) => {
-                return (x["accountId"] === first[i].accountId);
+                return (x.accountId === first[i].accountId);
             })
+
+            if (s) {
+                o.previousMonthConsumption = s.totalConsumption;
+            } else {
+                o.previousMonthConsumption = '';
+            }
 
             if (t) {
                 o.latitude = t.latitude;
@@ -115,7 +125,7 @@ async function sortedData() {
                 o.longitude = '';
             }
 
-            firstWithLocation.push(o);
+            updatedFirst.push(o);
         }
 
 
@@ -145,30 +155,34 @@ async function sortedData() {
             fifthTotalConsumption = 0,
             fifthTotalBill = 0,
             sixthTotalConsumption = 0,
-            sixthTotalBill = 0
-            ;
+            sixthTotalBill = 0,
+            totalFirstWithPDC = 0;
+        ;
 
         for (let i = 0; i < totalConnections; i++) {
-            totalLoad += parseInt(first[i].maxDemand);
-            totalEnergy += parseInt(first[i].totalConsumption);
-            totalBill += parseInt(first[i].totalAmountAfterDueDate);
-            if (0 < parseFloat(first[i].powerFactor) && parseFloat(first[i].powerFactor) < 0.8) {
-                totalPowerFactorLessThan8++;
-                totalPowerFactorLessThan8List.push(first[i]);
-                PowerFactorLessThan8TotalWeldingCharge += parseFloat(first[i].weldingSurcharge);
+            totalLoad += parseInt(updatedFirst[i].maxDemand);
+            totalEnergy += parseInt(updatedFirst[i].totalConsumption);
+            totalBill += parseInt(updatedFirst[i].totalAmountAfterDueDate);
+            if (updatedFirst[i].billType === 'PDC') {
+                totalFirstWithPDC++;
             }
-            surchargePayableOnDelay += parseInt(first[i].latePayCharge);
+            if (0 < parseFloat(updatedFirst[i].powerFactor) && parseFloat(updatedFirst[i].powerFactor) < 0.8) {
+                totalPowerFactorLessThan8++;
+                totalPowerFactorLessThan8List.push(updatedFirst[i]);
+                PowerFactorLessThan8TotalWeldingCharge += parseFloat(updatedFirst[i].weldingSurcharge);
+            }
+            surchargePayableOnDelay += parseInt(updatedFirst[i].latePayCharge);
 
 
-            let currentMaxDemand = parseInt(first[i].maxDemand);
+            let currentMaxDemand = parseInt(updatedFirst[i].maxDemand);
             let currentSanctionedLoad = parseInt(first[i].sanctionLoad.slice(0, -2));
 
             if ((((currentMaxDemand - currentSanctionedLoad) / currentSanctionedLoad * 100) > 20)) {
                 plus5MDSL++;
-                plus5MDSLList.push(first[i]);
+                plus5MDSLList.push(updatedFirst[i]);
             } else if ((((currentSanctionedLoad - currentMaxDemand) / currentSanctionedLoad * 100) > 10)) {
                 minus5MDSL++;
-                minus5MDSLList.push(first[i]);
+                minus5MDSLList.push(updatedFirst[i]);
             }
 
         }
@@ -207,17 +221,17 @@ async function sortedData() {
             zeroLTSecurityAmountDeposit = 0
             ;
 
-        for (let i = 0; i < first.length; i++) {
-            if (!parseInt(first[i].totalConsumption)) {
+        for (let i = 0; i < updatedFirst.length; i++) {
+            if (!parseInt(updatedFirst[i].totalConsumption)) {
                 zeroLT++;
-                zeroLTList.push(first[i]);
-                zeroLTFixedCharge += parseFloat(first[i].fixedCharge);
-                zeroLTSecurityAmountDeposit += parseFloat(first[i].securityAmountDeposit);
+                zeroLTList.push(updatedFirst[i]);
+                zeroLTFixedCharge += parseFloat(updatedFirst[i].fixedCharge);
+                zeroLTSecurityAmountDeposit += parseFloat(updatedFirst[i].securityAmountDeposit);
             }
         }
 
         for (let i = 0; i < second.length; i++) {
-            const thisMonthAccountData = first.find((x) => {
+            const thisMonthAccountData = updatedFirst.find((x) => {
                 return x.accountId === second[i].accountId;
             })
             const previousMonthAccountData = second[i];
@@ -233,8 +247,8 @@ async function sortedData() {
                     plus5++;
                     plus5List.push(thisMonthAccountData);
                 }
-                else if (parseFloat(thisMonthAccountData.totalConsumption) !== 0.0 && parseFloat(previousMonthAccountData.totalConsumption) !== 0.0) {
-                    const result = ((parseFloat(previousMonthAccountData.totalConsumption) > parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
+                else if (parseFloat(thisMonthAccountData.totalConsumption) > 0.0 && parseFloat(previousMonthAccountData.totalConsumption) > 0.0 && parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption)) {
+                    const result = ((parseFloat(previousMonthAccountData.totalConsumption) - parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
                     if ((result) >= 5) {
                         minus5++;
                         minus5List.push(thisMonthAccountData);
@@ -278,13 +292,14 @@ async function sortedData() {
             fourthTotalBill,
             fifthTotalBill,
             sixthTotalBill,
-            firstWithLocation,
+            updatedFirst,
             first,
             second,
             third,
             fourth,
             fifth,
-            sixth
+            sixth,
+            totalFirstWithPDC
         }
     } catch (error) {
         console.error('Error', error.message);

@@ -11,12 +11,11 @@ function Five({ list }) {
                     <tr>
                         <th scope="col">IVRS Number</th>
                         <th scope="col">Distribution Center</th>
+                        <th scope="col">Tariff Code</th>
                         <th scope="col">Energy Charge</th>
                         <th scope="col">Total Consumption</th>
                         <th scope="col">Fixed Charges</th>
                         <th scope="col">Total Amount After Due Date</th>
-                        <th scope="col">Tariff Code</th>
-                        {/* <th scope="col">Variation</th> */}
                     </tr>
                 </thead>
 
@@ -34,11 +33,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -56,11 +55,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -78,11 +77,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -100,11 +99,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -122,11 +121,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -144,11 +143,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -166,11 +165,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
+                                        <td>{x.tariffCode}</td>
                                         <td>{x.energyCharge}</td>
                                         <td>{x.totalConsumption}</td>
                                         <td>{x.fixedCharge}</td>
                                         <td>{x.totalAmountAfterDueDate}</td>
-                                        <td>{x.tariffCode}</td>
                                     </tr>
                                 )
                             }) : null
@@ -188,10 +187,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.totalAmountAfterDueDate}</td>
                                     </tr>
                                 )
                             }) : null
@@ -209,10 +209,11 @@ function Five({ list }) {
                                     <tr>
                                         <td>{x.accountId}</td>
                                         <td>{x.distributionCenter1}</td>
-                                        <td>{x.energyCharge}</td>
-                                        <td>{x.previousReading}</td>
-                                        <td>{x.presentMeterReading}</td>
                                         <td>{x.tariffCode}</td>
+                                        <td>{x.energyCharge}</td>
+                                        <td>{x.totalConsumption}</td>
+                                        <td>{x.fixedCharge}</td>
+                                        <td>{x.totalAmountAfterDueDate}</td>
                                     </tr>
                                 )
                             }) : null

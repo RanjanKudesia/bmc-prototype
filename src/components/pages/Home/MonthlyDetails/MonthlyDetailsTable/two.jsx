@@ -11,9 +11,9 @@ function Two({ list }) {
           <tr>
             <th scope="col">IVRS Number</th>
             <th scope="col">Distribution Center</th>
+            <th scope="col">Tariff Code</th>
             <th scope="col">Fixed Charge</th>
             <th scope="col">Security Deposit</th>
-            <th scope="col">Tariff Code</th>
             {/* <th scope="col">Variation</th> */}
           </tr>
         </thead>
@@ -32,9 +32,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -52,9 +52,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -72,9 +72,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -92,9 +92,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -112,9 +112,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -132,9 +132,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -152,9 +152,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -172,9 +172,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null
@@ -192,9 +192,9 @@ function Two({ list }) {
                   <tr>
                     <td>{x.accountId}</td>
                     <td>{x.distributionCenter1}</td>
+                    <td>{x.tariffCode}</td>
                     <td>{x.fixedCharge}</td>
                     <td>{x.securityAmountDeposit}</td>
-                    <td>{x.tariffCode}</td>
                   </tr>
                 )
               }) : null

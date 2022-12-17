@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BeforeLogin from './../../BeforeLogin/BeforeLogin';
 import DetailsHome from './DetailsHome/DetailsHome';
 import { Link } from 'react-router-dom';
-import { CSVLink } from "react-csv";
+// import { CSVLink } from "react-csv";
 import DashBoard from './../dashboard/DashBoard';
 import MonthDataTable from './MonthDataDetails/MonthDataTable';
 import MonthDataChart from './MonthDataDetails/MonthDataChart';
@@ -103,11 +103,13 @@ function Home({ data, existingUser }) {
                                     <DetailsHome data={data} />
                                 </div>
 
-                                <DashBoard data={data} existingUser={existingUser} />
-
-                                <div className=' d-flex justify-content-center'>
-                                    <CSVLink className='btn btn-secondary' data={first}>Download {first[0].billMonthYear} File</CSVLink>
+                                <div className='d-flex justify-content-center'>
+                                    <DashBoard data={data} existingUser={existingUser} />
                                 </div>
+
+                                {/* <div className='container d-flex justify-content-center mt-5'>
+                                    <CSVLink className='btn btn-secondary' data={first}>Download {first[0].billMonthYear} File</CSVLink>
+                                </div> */}
 
                                 <div className='container d-flex justify-content-center mt-5'>
                                     <form onSubmit={handleConnectionNumber}>
