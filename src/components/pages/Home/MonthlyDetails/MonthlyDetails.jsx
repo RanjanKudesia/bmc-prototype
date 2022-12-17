@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import BeforeLogin from "../../BeforeLogin/BeforeLogin"
 import MonthlyDetailsTable from "./MonthlyDetailsTable/MonthlyDetailsTable"
 import DownloadButton from './DownloadButton';
@@ -7,8 +7,6 @@ import DownloadButton from './DownloadButton';
 
 function MonthlyDetails({ data, existingUser }) {
 
-    const { plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List } = data;
-    const array = [plus5List, minus5List, zeroLTList, plus5MDSLList, minus5MDSLList, first, totalPowerFactorLessThan8List];
     const [list, setList] = useState('fifth');
 
 
@@ -39,10 +37,7 @@ function MonthlyDetails({ data, existingUser }) {
                                 <DownloadButton data={data} list={list} />
                             </div>
                         </div>
-                        {/* <div className='d-flex justify-content-center'> */}
                         <MonthlyDetailsTable data={data} list={list} />
-                        {/* </div> */}
-
                     </>
                     :
                     <BeforeLogin />

@@ -69,22 +69,18 @@ function Home({ data, existingUser }) {
                                             <tr>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Connections:</span></h4></td>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalConnections}</span></h4></td>
-                                                {/* <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/analysisPage'>Analysis</Link></button></td> */}
                                             </tr>
-                                            <tr>
 
+                                            <tr>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Load:</span></h4></td>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalLoad} kW</span></h4></td>
-                                                {/* <td><button className="btn btn-secondary "><Link className='contact-text-link fw-bold fs-5' to='/commercial'>Commercial</Link></button></td> */}
-
-
                                             </tr>
-                                            <tr>
 
+                                            <tr>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">Total Energy:</span></h4></td>
                                                 <td className='bg-secondary'><h4><span className=" badge bg-secondary">{totalEnergy} kWh</span></h4></td>
-
                                             </tr>
+
                                         </tbody>
                                     </table>
 
@@ -124,6 +120,7 @@ function Home({ data, existingUser }) {
                                         </div>
                                     </form>
                                 </div>
+
                                 {
                                     connectionNumber ?
                                         <div className='graph mt-4 mb-4'>
@@ -132,6 +129,7 @@ function Home({ data, existingUser }) {
                                         :
                                         null
                                 }
+
                                 {
                                     connectionNumber ?
                                         <div className='container graph mt-4 pt-1 pb-2'>
