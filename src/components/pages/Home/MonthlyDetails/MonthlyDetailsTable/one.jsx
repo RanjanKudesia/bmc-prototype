@@ -1,6 +1,21 @@
-
+import { useState } from "react";
+import ConnectionData from "../ConnectionData";
 
 function One({ list }) {
+  list = list.sort(function (a, b) {
+    const nameA = a.distributionCenter1.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.distributionCenter1.toUpperCase(); // ignore upper and lowercase
+    if (nameA > nameB) {
+        return -1;
+    }
+    if (nameA < nameB) {
+        return 1;
+    }
+
+    // names must be equal
+    return 0;
+});;
+  const [connectionNumber, setConnectionNumber] = useState(list[0]);
   let count = 0;
   return (
     <>
@@ -15,7 +30,8 @@ function One({ list }) {
             <th scope="col">Energy Charge</th>
             <th scope="col">Previous Month Consumption</th>
             <th scope="col">This Month Consumption</th>
-            {/* <th scope="col">Variation</th> */}
+            <th scope="col">Percentage Variation in Consumption</th>
+            <th scope="col">Full Detail</th>
           </tr>
         </thead>
 
@@ -37,6 +53,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -58,6 +80,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -79,6 +107,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -100,6 +134,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -121,6 +161,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -142,6 +188,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -163,6 +215,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -184,6 +242,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -205,6 +269,12 @@ function One({ list }) {
                     <td>{x.energyCharge}</td>
                     <td>{x.previousMonthConsumption}</td>
                     <td>{x.totalConsumption}</td>
+                    <td>{x.percentageVariation}%</td>
+                    <td>
+                      <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Details
+                      </button>
+                    </td>
                   </tr>
                 )
               }) : null
@@ -214,6 +284,15 @@ function One({ list }) {
 
         </tbody >
       </table >
+      <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasExampleLabel">IVRS Number: {connectionNumber.accountId}</h5>
+          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div className="offcanvas-body">
+          <ConnectionData x={connectionNumber} />
+        </div>
+      </div>
       {console.log(count)}
     </>
   )

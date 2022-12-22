@@ -137,7 +137,7 @@ function Home({ data, existingUser }) {
                                         <div className='container graph mt-4 pt-1 pb-2'>
                                             <div className='graph mt-4'>
                                                 <h1 className="contact-text d-flex justify-content-center">{connectionNumber.accountId} Full Details</h1>
-                                                <MonthDataTable x={connectionNumber} list={first} />
+                                                <MonthDataTable x={connectionNumber} />
                                             </div>
                                         </div>
                                         :
@@ -153,5 +153,6 @@ function Home({ data, existingUser }) {
         </>
     )
 }
+
 
 export default Home;

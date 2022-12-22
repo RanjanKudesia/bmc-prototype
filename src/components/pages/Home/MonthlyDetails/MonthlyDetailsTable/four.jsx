@@ -1,6 +1,21 @@
-
+import ConnectionData from "../ConnectionData";
+import { useState } from "react";
 
 function Four({ list }) {
+    list = list.sort(function (a, b) {
+        const nameA = a.distributionCenter1.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.distributionCenter1.toUpperCase(); // ignore upper and lowercase
+        if (nameA > nameB) {
+            return -1;
+        }
+        if (nameA < nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+    });;
+    const [connectionNumber, setConnectionNumber] = useState(list[0]);
     let count = 0;
     return (
         <>
@@ -15,6 +30,7 @@ function Four({ list }) {
                         <th scope="col">Sanctioned Load</th>
                         <th scope="col">Contract Demand</th>
                         <th scope="col">Maximum Demand</th>
+                        <th scope="col">Full Detail</th>
                     </tr>
                 </thead>
 
@@ -36,6 +52,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -57,6 +78,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -78,6 +104,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -99,6 +130,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -120,6 +156,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -141,6 +182,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -162,6 +208,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -183,6 +234,11 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
@@ -204,15 +260,27 @@ function Four({ list }) {
                                         <td>{x.sanctionLoad}</td>
                                         <td>{x.contractDemand}</td>
                                         <td>{x.maxDemand}</td>
+                                        <td>
+                                            <button onClick={() => setConnectionNumber(x)} className="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                Details
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                             }) : null
                     }
 
-
-
                 </tbody >
             </table >
+            <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div className="offcanvas-header">
+                    <h5 className="offcanvas-title" id="offcanvasExampleLabel">IVRS Number: {connectionNumber.accountId}</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    <ConnectionData x={connectionNumber} />
+                </div>
+            </div>
             {console.log(count)}
         </>
     )

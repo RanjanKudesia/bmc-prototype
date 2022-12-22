@@ -2,6 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from './FirebaseConfig';
 import locationData from "./data/locationData";
 
+
 async function sortSequenceData() {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const currentYear = new Date().getFullYear();
@@ -111,9 +112,15 @@ async function sortedData() {
             })
 
             if (s) {
-                o.previousMonthConsumption = s.totalConsumption;
+                o.previousMonthConsumption = parseInt(s.totalConsumption);
+                if (parseInt(s.totalConsumption)) {
+                    o.percentageVariation = parseInt(((parseInt(o.totalConsumption) - parseInt(s.totalConsumption)) / parseInt(s.totalConsumption)) * 100);
+                } else if (!parseInt(s.totalConsumption) && parseInt(o.totalConsumption)) {
+                    o.percentageVariation = parseInt(o.totalConsumption);
+                }
             } else {
                 o.previousMonthConsumption = '';
+                o.percentageVariation = 'NaN';
             }
 
             if (t) {
@@ -247,13 +254,13 @@ async function sortedData() {
                     plus5++;
                     plus5List.push(thisMonthAccountData);
                 }
-                else if (parseFloat(thisMonthAccountData.totalConsumption) > 0.0 && parseFloat(previousMonthAccountData.totalConsumption) > 0.0 && parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption)) {
+                else if (parseFloat(thisMonthAccountData.totalConsumption) && parseFloat(previousMonthAccountData.totalConsumption) && parseFloat(thisMonthAccountData.totalConsumption) > parseFloat(previousMonthAccountData.totalConsumption)) {
                     const result = ((parseFloat(previousMonthAccountData.totalConsumption) - parseFloat(thisMonthAccountData.totalConsumption)) / parseFloat(previousMonthAccountData.totalConsumption)) * 100;
                     if ((result) >= 5) {
                         minus5++;
                         minus5List.push(thisMonthAccountData);
                     }
-                } else if (parseFloat(previousMonthAccountData.totalConsumption) !== 0 && parseFloat(thisMonthAccountData.totalConsumption) === 0) {
+                } else if (parseFloat(previousMonthAccountData.totalConsumption) && !parseFloat(thisMonthAccountData.totalConsumption)) {
                     minus5++;
                     minus5List.push(thisMonthAccountData);
                 }

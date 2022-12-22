@@ -18,6 +18,7 @@ const App = ({ data }) => {
   const [user, setUser] = useState(null);
 
   firebaseAuthService.subscribeToAuthChanges(setUser);
+  // console.log(user.currentUser);
 
   return (
     <>
