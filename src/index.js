@@ -17,9 +17,8 @@ async function fetchData() {
       </BrowserRouter>
     </React.StrictMode>
   );
-
   const data = await sortedData();
-
+  // console.log(data);
   root.render(
     <React.StrictMode>
       <BrowserRouter>

@@ -4,34 +4,45 @@ import locationData from "./data/locationData";
 
 
 async function sortSequenceData() {
-    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const months = [
+        'JAN',
+        'FEB',
+        'MAR',
+        'APR',
+        'MAY',
+        'JUN',
+        'JUL',
+        'AUG',
+        'SEP',
+        'OCT',
+        'NOV',
+        'DEC'
+    ];
+    var sequence = [];
+    const currentMonth = new Date().getMonth()-1;
     const currentYear = new Date().getFullYear();
-    let currentMonth = new Date().getMonth() - 1;
-
-
-    let startYear = currentYear;
-    let previousYearStartMonth = 12;
-    let thisYearStartMonth = currentMonth - 5;
-
     if (currentMonth < 5) {
-        this.previousYearStartMonth = 7 - (currentMonth);
-        this.startYear--;
-        this.thisYearStartMonth = 0;
-    }
 
-    let dataSequence = [];
-    for (let i = currentMonth; i >= thisYearStartMonth; i--) {
-        const month_year = months[i] + '-' + startYear.toString();
-        dataSequence.push(month_year);
+        for (let i = currentMonth; i >= 0; i--) {
+            sequence.push(months[i] + '-' + JSON.stringify(currentYear));
+        };
+        const startYear = currentYear - 1;
+        const startMonth = 7 + currentMonth;
+        for (let i = 11; i >= startMonth; i--) {
+            sequence.push(months[i] + '-' + JSON.stringify(startYear));
+        }
+    } else {
+        sequence.push(months[currentMonth] + JSON.stringify(currentYear));
+        sequence.push(months[currentMonth - 1] + '-' + JSON.stringify(currentYear));
+        sequence.push(months[currentMonth - 2] + '-' + JSON.stringify(currentYear));
+        sequence.push(months[currentMonth - 3] + '-' + JSON.stringify(currentYear));
+        sequence.push(months[currentMonth - 4] + '-' + JSON.stringify(currentYear));
+        sequence.push(months[currentMonth - 5] + '-' + JSON.stringify(currentYear));
     }
-
-    for (let i = previousYearStartMonth; i <= 11; i++) {
-        const month_year = months[i] + '-' + currentYear.toString();
-        dataSequence.push(month_year);
-    }
-
-    return dataSequence;
+    return sequence;
 }
+
+
 
 async function getSixMonthsData() {
     try {
@@ -61,7 +72,6 @@ async function getSixMonthsData() {
 async function getSpecificMonthData(month_year) {
     try {
 
-        // const data = await convert(filePath);
         const docRef1 = doc(db, month_year, "firstPart-LT");
         const docRef2 = doc(db, month_year, "secondPart-LT");
         const docRef3 = doc(db, month_year, "thirdPart-LT");
@@ -72,8 +82,6 @@ async function getSpecificMonthData(month_year) {
         const docSnap4 = await getDoc(docRef4);
 
         if (docSnap1.exists() && docSnap2.exists() && docSnap3.exists() && docSnap4.exists()) {
-            // console.log("Document data:", docSnap.data());
-            // return docSnap.data();
             const result = [];
             result.push(...docSnap1.data().allowedData1);
             result.push(...docSnap2.data().allowedData2);
